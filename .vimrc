@@ -36,6 +36,11 @@ if dein#check_install()
   call dein#install()
 endif
 
+" vim plugin設定
+"   NERDTree
+" CTRL + n でNERDTreeを開く
+map <C-n> :NERDTreeToggle<CR>
+
 " 行番号の色
 " colorschemeの設定前に書くこと
 autocmd ColorScheme * highlight LineNr ctermfg=207
