@@ -45,6 +45,8 @@ set wildmode=list:longest
 " 折り返し時に表示行単位での移動できるようにする
 nnoremap j gj
 nnoremap k gk
+" カーソルが何行目の何列目に置かれているかを表示する
+set ruler
 
 
 " Tab系
@@ -56,7 +58,8 @@ set expandtab
 set tabstop=2
 " 行頭でのTab文字の表示幅
 set shiftwidth=2
-
+" 改行した時に、同じレベルのインデントにする
+set autoindent
 
 " 検索系
 " 検索文字列が小文字の場合は大文字小文字を区別なく検索する
