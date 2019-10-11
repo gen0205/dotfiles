@@ -7,7 +7,10 @@ alias l='clear && ll'
 
 alias ..='cd ..'
 alias ..2='cd ../..'
+alias ...="cd ../.."
 alias ..3='cd ../../..'
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
 
 alias g='git'
 alias ga='git add'
@@ -19,6 +22,8 @@ alias gst='git status'
 alias gco='git checkout'
 alias gf='git fetch'
 alias gc='git commit -m'
+
+alias home='cd ~'
 
 alias cp='cp -i'
 alias mv='mv -i'
