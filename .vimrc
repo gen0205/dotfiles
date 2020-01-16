@@ -120,8 +120,10 @@ nnoremap j gj
 nnoremap k gk
 " vim plugin設定
 "   NERDTree
-" CTRL + n でNERDTreeを開く
-map <C-n> :NERDTreeToggle<CR>
+" <Leader> + n でNERDTreeを開く
+map <Leader>n :NERDTreeToggle<CR>
+" <leader> + f でMRU(最近開いたファイルリスト)を開く
+map <Leader>f :MRU<CR>
 " ノーマルモードでスペースを3回押すと、カーソル下の単語がハイライト
 nnoremap <silent> <Space><Space><Space> "zyiw:let @/ = '\<' . @z . '\>'<CR>:set hlsearch<CR>
 " Ctrl + hjkl でウィンドウ間を移動
