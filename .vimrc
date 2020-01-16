@@ -1,4 +1,6 @@
-"#####dein設定#####
+" ==================
+" dein settings
+" ==================
 " プラグインがインストールされるディレクトリ
 let s:dein_dir = expand('~/.cache/dein')
 " dein.vim 本体がインストールされるディレクトリ
@@ -36,11 +38,6 @@ if dein#check_install()
   call dein#install()
 endif
 
-" vim plugin設定
-"   NERDTree
-" CTRL + n でNERDTreeを開く
-map <C-n> :NERDTreeToggle<CR>
-
 " 行番号の色
 " colorschemeの設定前に書くこと
 autocmd ColorScheme * highlight LineNr ctermfg=207
@@ -52,7 +49,7 @@ let g:rehash256 = 1
 set background=dark
 
 " setting
-"文字コードをUFT-8に設定
+"文字コードをUTF-8に設定
 set fenc=utf-8
 " バックアップファイルを作らない
 set nobackup
@@ -64,7 +61,6 @@ set autoread
 set hidden
 " 入力中のコマンドをステータスに表示する
 set showcmd
-
 
 " 見た目系
 " 行番号を表示
@@ -85,12 +81,8 @@ set showmatch
 set laststatus=2
 " コマンドラインの補完
 set wildmode=list:longest
-" 折り返し時に表示行単位での移動できるようにする
-nnoremap j gj
-nnoremap k gk
 " カーソルが何行目の何列目に置かれているかを表示する
 set ruler
-
 
 " Tab系
 " 不可視文字を可視化(タブが「▸-」と表示される)
@@ -115,8 +107,33 @@ set incsearch
 set wrapscan
 " 検索語をハイライト表示
 set hlsearch
-" ESC連打でハイライト解除
-nmap <Esc><Esc> :nohlsearch<CR><Esc>
 " <Leader>を<Space>(半角スペース)に置き換え
 let mapleader = "\<Space>"
 
+" ==================
+" map settings
+" ==================
+" ESC連打でハイライト解除
+nmap <Esc><Esc> :nohlsearch<CR><Esc>
+" 折り返し時に表示行単位での移動できるようにする
+nnoremap j gj
+nnoremap k gk
+" vim plugin設定
+"   NERDTree
+" CTRL + n でNERDTreeを開く
+map <C-n> :NERDTreeToggle<CR>
+" ノーマルモードでスペースを3回押すと、カーソル下の単語がハイライト
+nnoremap <silent> <Space><Space><Space> "zyiw:let @/ = '\<' . @z . '\>'<CR>:set hlsearch<CR>
+" Ctrl + hjkl でウィンドウ間を移動
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+" Shift + 矢印でウィンドウサイズを変更
+nnoremap <S-Left>  <C-w><<CR>
+nnoremap <S-Right> <C-w>><CR>
+nnoremap <S-Up>    <C-w>-<CR>
+nnoremap <S-Down>  <C-w>+<CR>
+" タブ間の移動
+nnoremap <C-n> gt
+nnoremap <C-p> gT
