@@ -12,3 +12,6 @@ repo = 'scrooloose/nerdtree'
 
 [[plugins]]
 repo = 'vim-airline/vim-airline'
+
+[[plugins]]
+repo = 'easymotion/vim-easymotion'

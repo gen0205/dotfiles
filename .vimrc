@@ -117,3 +117,6 @@ set wrapscan
 set hlsearch
 " ESC連打でハイライト解除
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
+" <Leader>を<Space>(半角スペース)に置き換え
+let mapleader = "\<Space>"
+
