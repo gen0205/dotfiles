@@ -18,3 +18,9 @@ repo = 'easymotion/vim-easymotion'
 
 [[plugins]]
 repo = 'vim-scripts/mru.vim'
+
+[[plugins]]
+repo = 'posva/vim-vue'
+
+[[plugins]]
+repo = 'preservim/nerdcommenter'

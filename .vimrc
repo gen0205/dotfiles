@@ -118,12 +118,6 @@ nmap <Esc><Esc> :nohlsearch<CR><Esc>
 " 折り返し時に表示行単位での移動できるようにする
 nnoremap j gj
 nnoremap k gk
-" vim plugin設定
-"   NERDTree
-" <Leader> + n でNERDTreeを開く
-map <Leader>n :NERDTreeToggle<CR>
-" <leader> + f でMRU(最近開いたファイルリスト)を開く
-map <Leader>f :MRU<CR>
 " ノーマルモードでスペースを3回押すと、カーソル下の単語がハイライト
 nnoremap <silent> <Space><Space><Space> "zyiw:let @/ = '\<' . @z . '\>'<CR>:set hlsearch<CR>
 " Ctrl + hjkl でウィンドウ間を移動
@@ -139,3 +133,38 @@ nnoremap <S-Down>  <C-w>+<CR>
 " タブ間の移動
 nnoremap <C-n> gt
 nnoremap <C-p> gT
+
+" ==================
+" vim plugin設定
+" ==================
+" NERDTree
+" <Leader> + n でNERDTreeを開く
+map <Leader>n :NERDTreeToggle<CR>
+" MRU
+" <leader> + f でMRU(最近開いたファイルリスト)を開く
+map <Leader>f :MRU<CR>
+" posva/vim-vue
+" ファイルの途中からsyntaxが効かなくなることがあるらしいので以下を追加
+autocmd FileType vue syntax sync fromstart
+" NERDCommenter
+" .vueファイルのコメント機能を使用できるようにする。
+" 参照: https://github.com/posva/vim-vue#nerdcommenter
+let g:ft = ''
+function! NERDCommenter_before()
+  if &ft == 'vue'
+    let g:ft = 'vue'
+    let stack = synstack(line('.'), col('.'))
+    if len(stack) > 0
+      let syn = synIDattr((stack)[0], 'name')
+      if len(syn) > 0
+        exe 'setf ' . substitute(tolower(syn), '^vue_', '', '')
+      endif
+    endif
+  endif
+endfunction
+function! NERDCommenter_after()
+  if g:ft == 'vue'
+    setf vue
+    let g:ft = ''
+  endif
+endfunction
