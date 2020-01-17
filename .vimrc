@@ -109,6 +109,8 @@ set wrapscan
 set hlsearch
 " <Leader>を<Space>(半角スペース)に置き換え
 let mapleader = "\<Space>"
+" :vimgrepや:grepや:Ggrepでも自動的にquickfix-windowを開くようにする
+autocmd QuickFixCmdPost *grep* cwindow
 
 " ==================
 " map settings
@@ -133,6 +135,8 @@ nnoremap <S-Down>  <C-w>+<CR>
 " タブ間の移動
 nnoremap <C-n> gt
 nnoremap <C-p> gT
+" vimgrep
+nmap <Esc>f :vimgrep // *<left><left><left>
 
 " ==================
 " vim plugin設定
