@@ -1,7 +1,11 @@
+if [ "$(uname)" = 'Darwin' ]; then
+  isMac=1
+fi
+
 # エイリアスの設定
 # ls（カラー表示）
 # mac環境とlinux環境でカラーオプションを切り替える
-if [ "$(uname)" = 'Darwin' ]; then
+if [ $isMac -eq 1 ]; then
   alias ls='ls -G'
   alias ll='ls -lG'
   alias la='ls -laG'
@@ -67,7 +71,12 @@ function promps {
   esac
   local BASE="\u@\h"
   #PS1="${TITLEBAR}${GREEN}${BASE}${WHITE}:${GREEN}\w${GREEN}\$(parse_git_branch)${WHITE} \$ "
-  PS1="${GREEN}\w${GREEN}\$(parse_git_branch)${WHITE} \$ "
+
+  if [ $isMac -eq 1 ]; then
+    PS1="${BLUE}\w${BLUE}\$(parse_git_branch)${WHITE} \$ "
+  else
+    PS1="${GREEN}\w${GREEN}\$(parse_git_branch)${WHITE} \$ "
+  fi
 }
 promps
 
