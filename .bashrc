@@ -1,3 +1,4 @@
+isMac=0
 if [ "$(uname)" = 'Darwin' ]; then
   isMac=1
 fi
