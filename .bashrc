@@ -65,6 +65,8 @@ function promps {
   local  GREEN="\[\e[1;32m\]"
   local  WHITE="\[\e[00m\]"
   local  GRAY="\[\e[1;37m\]"
+  # 文字色+背景色
+  local  WHITE_ON_GREEN="\[\e[1;37;42m\]"
 
   case $TERM in
     xterm*) TITLEBAR='\[\e]0;\W\007\]';;
@@ -76,7 +78,7 @@ function promps {
   if [ $isMac -eq 1 ]; then
     PS1="${BLUE}\w${BLUE}\$(parse_git_branch)${WHITE} \$ "
   else
-    PS1="${GREEN}\w${GREEN}\$(parse_git_branch)${WHITE} \$ "
+    PS1="${GREEN}\w${WHITE_ON_GREEN}\$(parse_git_branch)${WHITE} \$ "
   fi
 }
 promps

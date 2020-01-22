@@ -122,6 +122,8 @@ nnoremap j gj
 nnoremap k gk
 " ノーマルモードでスペースを3回押すと、カーソル下の単語がハイライト
 nnoremap <silent> <Space><Space><Space> "zyiw:let @/ = '\<' . @z . '\>'<CR>:set hlsearch<CR>
+" ↑とセットで使用。<Leader><Leader>r でカーソル下の単語をハイライトしながら置換を行う。
+nmap <Leader><Leader>r <Space><Space><Space>:%s/<C-r>///g<Left><Left>
 " Ctrl + hjkl でウィンドウ間を移動
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
@@ -135,8 +137,12 @@ nnoremap <S-Down>  <C-w>+<CR>
 " タブ間の移動
 nnoremap <C-n> gt
 nnoremap <C-p> gT
+" 検索
 " vimgrep
 nmap <Esc>f :vimgrep // *<left><left><left>
+" 置換系
+" <Leader>r で一括置換フォーマットを呼び出す。
+nnoremap <Leader>r :%s///g<left><left><left>
 
 " ==================
 " vim plugin設定
