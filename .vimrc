@@ -43,11 +43,15 @@ endif
 autocmd ColorScheme * highlight LineNr ctermfg=207
 "カラースキーマを設定
 " colorscheme molokai
-colorscheme dracula
 syntax on
 let g:molokai_original = 1
 let g:rehash256 = 1
 set background=dark
+" Include background fill colors
+let g:dracula_colorterm = 0
+"イタリック(斜め字体)非対応ターミナルの場合にカラーがおかしくなるので無効化
+let g:dracula_italic = 0
+colorscheme dracula
 
 " setting
 "文字コードをUTF-8に設定
