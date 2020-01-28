@@ -1,3 +1,5 @@
+# mac環境かどうかを判別する
+# if [ $isMac -eq q ]; の書式で判別する。
 isMac=0
 if [ "$(uname)" = 'Darwin' ]; then
   isMac=1
