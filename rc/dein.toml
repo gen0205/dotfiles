@@ -24,3 +24,7 @@ repo = 'posva/vim-vue'
 
 [[plugins]]
 repo = 'preservim/nerdcommenter'
+
+[[plugins]]
+repo = 'dracula/vim'
+name = 'dracula'

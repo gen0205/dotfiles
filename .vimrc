@@ -42,7 +42,8 @@ endif
 " colorschemeの設定前に書くこと
 autocmd ColorScheme * highlight LineNr ctermfg=207
 "カラースキーマを設定
-colorscheme molokai
+" colorscheme molokai
+colorscheme dracula
 syntax on
 let g:molokai_original = 1
 let g:rehash256 = 1
