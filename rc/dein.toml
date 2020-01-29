@@ -28,3 +28,6 @@ repo = 'preservim/nerdcommenter'
 [[plugins]]
 repo = 'dracula/vim'
 name = 'dracula'
+
+[[plugins]]
+repo = 'nathanaelkane/vim-indent-guides'
