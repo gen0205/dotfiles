@@ -37,3 +37,6 @@ repo = 'unblevable/quick-scope'
 
 [[plugins]]
 repo = 'ctrlpvim/ctrlp.vim'
+
+[[plugins]]
+repo = 'bronson/vim-visual-star-search'
