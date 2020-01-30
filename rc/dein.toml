@@ -46,3 +46,6 @@ repo = 'vim-scripts/IndexedSearch'
 
 [[plugins]]
 repo = 'Raimondi/delimitMate'
+
+[[plugins]]
+repo = 'Yggdroot/indentLine'
