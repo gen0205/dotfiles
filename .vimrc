@@ -160,6 +160,13 @@ nnoremap <Leader>r :%s///g<left><left><left>
 " NERDTree
 " <Leader> + n でNERDTreeを開く
 map <Leader>n :NERDTreeToggle<CR>
+" Make nerdtree look nice
+let NERDTreeMinimalUI = 1
+let NERDTreeDirArrows = 1
+let g:NERDTreeWinSize = 30
+" easymotion
+" 割当キーを押しやすいものだけに変更
+let g:EasyMotion_keys='asdfjkoweriop'
 " MRU
 " <leader> + f でMRU(最近開いたファイルリスト)を開く
 map <Leader>f :MRU<CR>
