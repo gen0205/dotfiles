@@ -43,3 +43,6 @@ repo = 'bronson/vim-visual-star-search'
 
 [[plugins]]
 repo = 'vim-scripts/IndexedSearch'
+
+[[plugins]]
+repo = 'Raimondi/delimitMate'
