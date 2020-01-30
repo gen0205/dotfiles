@@ -49,3 +49,6 @@ repo = 'Raimondi/delimitMate'
 
 [[plugins]]
 repo = 'Yggdroot/indentLine'
+
+[[plugins]]
+repo = 'tpope/vim-surround'

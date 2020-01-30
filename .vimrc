@@ -101,6 +101,11 @@ set shiftwidth=2
 " 改行した時に、同じレベルのインデントにする
 set autoindent
 
+" indent settings
+filetype on
+filetype plugin on
+filetype indent on
+
 " 検索系
 " 検索文字列が小文字の場合は大文字小文字を区別なく検索する
 set ignorecase
