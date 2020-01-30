@@ -34,3 +34,6 @@ repo = 'nathanaelkane/vim-indent-guides'
 
 [[plugins]]
 repo = 'unblevable/quick-scope'
+
+[[plugins]]
+repo = 'ctrlpvim/ctrlp.vim'
