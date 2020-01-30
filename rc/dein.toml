@@ -31,3 +31,6 @@ name = 'dracula'
 
 [[plugins]]
 repo = 'nathanaelkane/vim-indent-guides'
+
+[[plugins]]
+repo = 'unblevable/quick-scope'
