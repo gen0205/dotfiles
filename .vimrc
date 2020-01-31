@@ -206,4 +206,7 @@ let g:indent_guides_exclude_filetypes = ['help', 'nerdtree']
 " unblevable/quick-scope
 " Trigger a highlight in the appropriate direction when pressing these keys:
 let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
-
+" terryma/vim-expand-region
+" set mapping
+map K <Plug>(expand_region_expand)
+map J <Plug>(expand_region_shrink)

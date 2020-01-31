@@ -52,3 +52,6 @@ repo = 'Yggdroot/indentLine'
 
 [[plugins]]
 repo = 'tpope/vim-surround'
+
+[[plugins]]
+repo = 'terryma/vim-expand-region'
