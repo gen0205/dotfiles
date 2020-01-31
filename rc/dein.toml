@@ -55,3 +55,6 @@ repo = 'tpope/vim-surround'
 
 [[plugins]]
 repo = 'terryma/vim-expand-region'
+
+[[plugins]]
+repo = 'reireias/vim-cheatsheet'

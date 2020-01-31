@@ -210,3 +210,5 @@ let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 " set mapping
 map K <Plug>(expand_region_expand)
 map J <Plug>(expand_region_shrink)
+" reireias/vim-cheatsheet
+let g:cheatsheet#cheat_file = '~/.vim/.cheatsheet.md'
