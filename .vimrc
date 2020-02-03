@@ -146,6 +146,7 @@ nnoremap <S-Up>    <C-w>-<CR>
 nnoremap <S-Down>  <C-w>+<CR>
 " タブ間の移動
 nnoremap <C-n> gt
+" TODO CtrlPプラグインと競合している。
 nnoremap <C-p> gT
 " 検索
 " vimgrep
