@@ -11,6 +11,9 @@ repo = 'airblade/vim-gitgutter'
 repo = 'scrooloose/nerdtree'
 
 [[plugins]]
+repo = 'jistr/vim-nerdtree-tabs'
+
+[[plugins]]
 repo = 'vim-airline/vim-airline'
 
 [[plugins]]

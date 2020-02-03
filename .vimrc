@@ -159,12 +159,13 @@ nnoremap <Leader>r :%s///g<left><left><left>
 " vim plugin設定
 " ==================
 " NERDTree
-" <Leader> + n でNERDTreeを開く
-map <Leader>n :NERDTreeToggle<CR>
 " Make nerdtree look nice
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
 let g:NERDTreeWinSize = 30
+" NERDTreeTabs
+" <Leader> + n でNERDTreeTabsを開く
+map <Leader>n <plug>NERDTreeTabsToggle<CR>
 " easymotion
 " 割当キーを押しやすいものだけに変更
 let g:EasyMotion_keys='asdfjkoweriop'
