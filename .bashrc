@@ -103,3 +103,18 @@ HISTCONTROL=ignoreboth
 case "$TERM" in
     xterm-color|*-256color) color_prompt=yes;;
 esac
+
+# FZF
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+## fvimコマンド-リポジトリ管理のファイルをFZFで開き選択したファイルをvimで開く
+fvim() {
+  files=$(git ls-files) &&
+  selected_files=$(echo "$files" | fzf -m --preview 'head -100 {}') &&
+  vim $selected_files
+}
+## fgaコマンド-ファイルにどんな差分があるのかを見ながら、ステージングするファイルを選択する
+fga() {
+  modified_files=$(git status --short | awk '{print $2}') &&
+  selected_files=$(echo "$modified_files" | fzf -m --preview 'git diff {}') &&
+  git add $selected_files
+}

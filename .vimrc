@@ -78,8 +78,10 @@ set cursorcolumn
 set virtualedit=onemore
 " インデントはスマートインデント
 set smartindent
-" ビープ音を可視化
-set visualbell
+" ビープ音を可視化（フラッシュさせる)
+" ※フラッシュが目障りなので無効化
+" set visualbell
+set vb t_vb=
 " 括弧入力時の対応する括弧を表示
 set showmatch
 " ステータスラインを常に表示
@@ -214,3 +216,8 @@ map K <Plug>(expand_region_expand)
 map J <Plug>(expand_region_shrink)
 " reireias/vim-cheatsheet
 let g:cheatsheet#cheat_file = '~/.vim/.cheatsheet.md'
+"FZF
+nnoremap <Leader>p :FZFFileList<CR>
+command! FZFFileList call fzf#run(fzf#wrap({
+            \ 'source': 'find . -type d -name .git -prune -o ! -name .DS_Store',
+            \ 'down': '40%'}))

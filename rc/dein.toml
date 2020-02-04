@@ -39,9 +39,6 @@ repo = 'nathanaelkane/vim-indent-guides'
 repo = 'unblevable/quick-scope'
 
 [[plugins]]
-repo = 'ctrlpvim/ctrlp.vim'
-
-[[plugins]]
 repo = 'bronson/vim-visual-star-search'
 
 [[plugins]]
@@ -61,3 +58,12 @@ repo = 'terryma/vim-expand-region'
 
 [[plugins]]
 repo = 'reireias/vim-cheatsheet'
+
+[[plugins]]
+repo = 'junegunn/fzf'
+build = './install --all'
+merged = '0'
+
+[[plugins]]
+repo = 'junegunn/fzf.vim'
+depends = 'fzf'
