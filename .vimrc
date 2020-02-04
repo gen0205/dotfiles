@@ -38,6 +38,9 @@ if dein#check_install()
   call dein#install()
 endif
 
+" ==================
+" 色系
+" ==================
 " 行番号の色
 " colorschemeの設定前に書くこと
 autocmd ColorScheme * highlight LineNr ctermfg=207
@@ -53,7 +56,9 @@ let g:dracula_colorterm = 0
 let g:dracula_italic = 0
 colorscheme dracula
 
+" ==================
 " setting
+" ==================
 "文字コードをUTF-8に設定
 set fenc=utf-8
 " バックアップファイルを作らない
@@ -67,7 +72,9 @@ set hidden
 " 入力中のコマンドをステータスに表示する
 set showcmd
 
+" ==================
 " 見た目系
+" ==================
 " 行番号を表示
 set number
 " 現在の行を強調表示
@@ -91,7 +98,9 @@ set wildmode=list:longest
 " カーソルが何行目の何列目に置かれているかを表示する
 set ruler
 
+" ==================
 " Tab系
+" ==================
 " 不可視文字を可視化(タブが「▸-」と表示される)
 set list listchars=tab:\▸\-
 " Tab文字を半角スペースにする
@@ -103,12 +112,16 @@ set shiftwidth=2
 " 改行した時に、同じレベルのインデントにする
 set autoindent
 
+" ==================
 " indent settings
+" ==================
 filetype on
 filetype plugin on
 filetype indent on
 
+" ==================
 " 検索系
+" ==================
 " 検索文字列が小文字の場合は大文字小文字を区別なく検索する
 set ignorecase
 " 検索文字列に大文字が含まれている場合は区別して検索する
@@ -148,7 +161,6 @@ nnoremap <S-Up>    <C-w>-<CR>
 nnoremap <S-Down>  <C-w>+<CR>
 " タブ間の移動
 nnoremap <C-n> gt
-" TODO CtrlPプラグインと競合している。
 nnoremap <C-p> gT
 " 検索
 " vimgrep
@@ -156,6 +168,12 @@ nmap <Esc>f :vimgrep // *<left><left><left>
 " 置換系
 " <Leader>r で一括置換フォーマットを呼び出す。
 nnoremap <Leader>r :%s///g<left><left><left>
+
+" ==================
+" カスタムコマンド
+" ==================
+" .vimrc再読み込み
+command! Refresh source ~/.vimrc
 
 " ==================
 " vim plugin設定
@@ -218,6 +236,12 @@ map J <Plug>(expand_region_shrink)
 let g:cheatsheet#cheat_file = '~/.vim/.cheatsheet.md'
 "FZF
 nnoremap <Leader>g :Rg 
+if executable('rg')
+    command! -bang -nargs=* Rg
+        \ call fzf#vim#grep(
+        \   'rg --line-number --no-heading '.shellescape(<q-args>), 0,
+        \   fzf#vim#with_preview({'options': '--exact --reverse --delimiter : --nth 3..'}, 'up:50%:wrap'))
+endif
 nnoremap <Leader>p :FZFFileList<CR>
 command! FZFFileList call fzf#run(fzf#wrap({
             \ 'source': 'find . -type d -name .git -prune -o ! -name .DS_Store',
