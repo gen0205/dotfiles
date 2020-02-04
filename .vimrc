@@ -202,8 +202,8 @@ endfunction
 " nathanaelkane/vim-indent-guides
 " Tab可視化色設定
 let g:indent_guides_auto_colors = 0
-autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=3
-autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=4
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=#262626 ctermbg=gray
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#3c3c3c ctermbg=darkgray 
 let g:indent_guides_guide_size = 1
 let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_exclude_filetypes = ['help', 'nerdtree']
@@ -217,6 +217,7 @@ map J <Plug>(expand_region_shrink)
 " reireias/vim-cheatsheet
 let g:cheatsheet#cheat_file = '~/.vim/.cheatsheet.md'
 "FZF
+nnoremap <Leader>g :Rg 
 nnoremap <Leader>p :FZFFileList<CR>
 command! FZFFileList call fzf#run(fzf#wrap({
             \ 'source': 'find . -type d -name .git -prune -o ! -name .DS_Store',
