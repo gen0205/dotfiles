@@ -250,4 +250,4 @@ endif
 nnoremap <Leader>p :Files<CR>
 " :Files コマンドをpreview付きにする(batコマンドが使えれば色もつける)
 command! -bang -nargs=? -complete=dir Files
-    \ call fzf#vim#files(<q-args>, {'options': ['--layout=reverse', '--info=inline', '--preview', s:dein_dir . '/repos/github.com/junegunn/fzf.vim/bin/preview.sh {}']}, <bang>0)
+    \ call fzf#vim#files(<q-args>, fzf#vim#with_preview({'options': ['--layout=reverse', '--info=inline']}), <bang>0)
