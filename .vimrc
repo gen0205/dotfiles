@@ -239,7 +239,7 @@ nnoremap <Leader>g :Rg
 if executable('rg')
     command! -bang -nargs=* Rg
         \ call fzf#vim#grep(
-        \   'rg --line-number --no-heading --hidden --follow --glob "!.git" '.shellescape(<q-args>), 0,
+        \   'rg -S --line-number --no-heading --hidden --follow --glob "!.git" '.shellescape(<q-args>), 0,
         \   fzf#vim#with_preview({'options': '--exact --reverse --delimiter : --nth 3..'}, 'up:50%:wrap'))
 endif
 " TODO: 以下は新しいmap設定を採用したため削除する予定
