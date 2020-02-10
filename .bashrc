@@ -106,6 +106,15 @@ esac
 
 # FZF
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+if type rg > /dev/null 2>&1
+then
+  #rg(ripgrep)コマンドが使用可能な場合
+  #fzfコマンドでripgrepを使用する。また、隠しファイルも結果に含み、リンクの場合はリンク先ファイルを読み、.git/フォルダは無視するようにする。
+  #上記はfzf.vimの結果にも反映される
+  export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!.git"'
+fi
+#fzfコマンド実行時のデフォルトオプション
+export FZF_DEFAULT_OPTS='--height 40% --reverse --border --cycle'
 ## fvimコマンド-リポジトリ管理のファイルをFZFで開き選択したファイルをvimで開く
 fvim() {
   files=$(git ls-files) &&
