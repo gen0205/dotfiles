@@ -76,3 +76,9 @@ repo = 'mhinz/vim-startify'
 
 [[plugins]]
 repo = 'yuttie/comfortable-motion.vim'
+
+[[plugins]]
+repo = 'leafgarland/typescript-vim'
+
+[[plugins]]
+repo = 'MaxMEllon/vim-jsx-pretty'
