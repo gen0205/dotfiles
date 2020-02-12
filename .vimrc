@@ -234,7 +234,7 @@ map K <Plug>(expand_region_expand)
 map J <Plug>(expand_region_shrink)
 " reireias/vim-cheatsheet
 let g:cheatsheet#cheat_file = '~/.vim/.cheatsheet.md'
-"FZF
+" FZF
 nnoremap <Leader>g :Rg 
 if executable('rg')
     command! -bang -nargs=* Rg
@@ -251,3 +251,5 @@ nnoremap <Leader>p :Files<CR>
 " :Files コマンドをpreview付きにする(batコマンドが使えれば色もつける)
 command! -bang -nargs=? -complete=dir Files
     \ call fzf#vim#files(<q-args>, fzf#vim#with_preview({'options': ['--layout=reverse', '--info=inline']}), <bang>0)
+" yuttie/comfortable-motion.vim
+let g:comfortable_motion_interval = 3000.0 / 60

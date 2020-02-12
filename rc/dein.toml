@@ -73,3 +73,6 @@ depends = 'fzf'
 
 [[plugins]]
 repo = 'mhinz/vim-startify'
+
+[[plugins]]
+repo = 'yuttie/comfortable-motion.vim'
