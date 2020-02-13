@@ -178,24 +178,34 @@ command! Refresh source ~/.vimrc
 " ==================
 " vim plugin設定
 " ==================
+" ------------------
 " NERDTree
+" ------------------
 " Make nerdtree look nice
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
 let g:NERDTreeWinSize = 30
+" ------------------
 " NERDTreeTabs
+" ------------------
 " <Leader> + n でNERDTreeTabsを開く
 map <Leader>n <plug>NERDTreeTabsToggle<CR>
 " easymotion
 " 割当キーを押しやすいものだけに変更
 let g:EasyMotion_keys='asdfjkoweriop'
+" ------------------
 " MRU
+" ------------------
 " <leader> + f でMRU(最近開いたファイルリスト)を開く
 map <Leader>f :MRU<CR>
+" ------------------
 " posva/vim-vue
+" ------------------
 " ファイルの途中からsyntaxが効かなくなることがあるらしいので以下を追加
 autocmd FileType vue syntax sync fromstart
+" ------------------
 " NERDCommenter
+" ------------------
 " .vueファイルのコメント機能を使用できるようにする。
 " 参照: https://github.com/posva/vim-vue#nerdcommenter
 let g:ft = ''
@@ -217,7 +227,9 @@ function! NERDCommenter_after()
     let g:ft = ''
   endif
 endfunction
+" ------------------
 " nathanaelkane/vim-indent-guides
+" ------------------
 " Tab可視化色設定
 let g:indent_guides_auto_colors = 0
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=#262626 ctermbg=gray
@@ -225,16 +237,24 @@ autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#3c3c3c ctermbg=darkgr
 let g:indent_guides_guide_size = 1
 let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_exclude_filetypes = ['help', 'nerdtree', 'startify']
+" ------------------
 " unblevable/quick-scope
+" ------------------
 " Trigger a highlight in the appropriate direction when pressing these keys:
 let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
+" ------------------
 " terryma/vim-expand-region
+" ------------------
 " set mapping
 map K <Plug>(expand_region_expand)
 map J <Plug>(expand_region_shrink)
+" ------------------
 " reireias/vim-cheatsheet
+" ------------------
 let g:cheatsheet#cheat_file = '~/.vim/.cheatsheet.md'
+" ------------------
 " FZF
+" ------------------
 nnoremap <Leader>g :Rg 
 if executable('rg')
     command! -bang -nargs=* Rg
@@ -251,5 +271,10 @@ nnoremap <Leader>p :Files<CR>
 " :Files コマンドをpreview付きにする(batコマンドが使えれば色もつける)
 command! -bang -nargs=? -complete=dir Files
     \ call fzf#vim#files(<q-args>, fzf#vim#with_preview({'options': ['--layout=reverse', '--info=inline']}), <bang>0)
+" :Buffers コマンドで該当バッファを開く際、既にウィンドウを開いていたらそのウィンドウに移動する
+let g:fzf_buffers_jump = 1
+
+" ------------------
 " yuttie/comfortable-motion.vim
+" ------------------
 let g:comfortable_motion_interval = 3000.0 / 60
