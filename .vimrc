@@ -159,6 +159,11 @@ nnoremap <S-Left>  <C-w><<CR>
 nnoremap <S-Right> <C-w>><CR>
 nnoremap <S-Up>    <C-w>-<CR>
 nnoremap <S-Down>  <C-w>+<CR>
+" +,-でも上下のウィンドウサイズ調整
+if bufwinnr(1)
+  map + <C-W>+
+  map - <C-W>-
+endif
 " タブ間の移動
 nnoremap <C-n> gt
 nnoremap <C-p> gT
@@ -190,7 +195,9 @@ let g:NERDTreeWinSize = 30
 " ------------------
 " <Leader> + n でNERDTreeTabsを開く
 map <Leader>n <plug>NERDTreeTabsToggle<CR>
+" ------------------
 " easymotion
+" ------------------
 " 割当キーを押しやすいものだけに変更
 let g:EasyMotion_keys='asdfjkoweriop'
 " ------------------
