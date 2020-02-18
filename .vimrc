@@ -273,7 +273,7 @@ let g:cheatsheet#cheat_file = '~/.vim/.cheatsheet.md'
 " ------------------
 " FZF
 " ------------------
-nnoremap <Leader>g :Rg
+nnoremap <Leader>g :Rg<Space>
 if executable('rg')
     command! -bang -nargs=* Rg
         \ call fzf#vim#grep(
