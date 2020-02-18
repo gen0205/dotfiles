@@ -140,6 +140,8 @@ autocmd QuickFixCmdPost *grep* cwindow
 " ==================
 " map settings
 " ==================
+" jjでESC
+inoremap jj <Esc>
 " ESC連打でハイライト解除
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
 " 折り返し時に表示行単位での移動できるようにする
@@ -249,7 +251,7 @@ endfunction
 " Tab可視化色設定
 let g:indent_guides_auto_colors = 0
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=#262626 ctermbg=gray
-autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#3c3c3c ctermbg=darkgray 
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#3c3c3c ctermbg=darkgray
 let g:indent_guides_guide_size = 1
 let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_exclude_filetypes = ['help', 'nerdtree', 'startify']
@@ -271,7 +273,7 @@ let g:cheatsheet#cheat_file = '~/.vim/.cheatsheet.md'
 " ------------------
 " FZF
 " ------------------
-nnoremap <Leader>g :Rg 
+nnoremap <Leader>g :Rg
 if executable('rg')
     command! -bang -nargs=* Rg
         \ call fzf#vim#grep(
