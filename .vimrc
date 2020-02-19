@@ -175,6 +175,8 @@ nmap <Esc>f :vimgrep // *<left><left><left>
 " 置換系
 " <Leader>r で一括置換フォーマットを呼び出す。
 nnoremap <Leader>r :%s///g<left><left><left>
+" redo
+nnoremap U <C-R>
 
 " ==================
 " カスタムコマンド
