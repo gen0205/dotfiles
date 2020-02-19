@@ -147,6 +147,9 @@ nmap <Esc><Esc> :nohlsearch<CR><Esc>
 " 折り返し時に表示行単位での移動できるようにする
 nnoremap j gj
 nnoremap k gk
+" ^/$の簡易入力
+nnoremap H ^
+nnoremap L $
 " ノーマルモードでスペースを3回押すと、カーソル下の単語がハイライト
 nnoremap <silent> <Space><Space><Space> "zyiw:let @/ = '\<' . @z . '\>'<CR>:set hlsearch<CR>
 " ↑とセットで使用。<Leader><Leader>r でカーソル下の単語をハイライトしながら置換を行う。
@@ -298,3 +301,8 @@ let g:fzf_buffers_jump = 1
 " yuttie/comfortable-motion.vim
 " ------------------
 let g:comfortable_motion_interval = 3000.0 / 60
+" ------------------
+" GitGutter
+" ------------------
+" GitGutterのdiff取得感覚を100msecに変更(デフォルトは4000msec)
+set updatetime=100
