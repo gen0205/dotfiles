@@ -57,6 +57,12 @@ alias o='open'
 alias q='exit'
 alias v='vim'
 
+if type nvim > /dev/null 2>&1; then
+  alias v='nvim'
+  alias vi='nvim'
+  alias vim='nvim'
+fi
+
 # プロンプトの設定
 #PS1='\[\e[34m\]\w \[\e[37m\]\$\[\e[0m\] '
 # git現在のブランチをプロンプトに表示する
