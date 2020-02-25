@@ -9,15 +9,15 @@ fi
 # ls（カラー表示）
 # mac環境とlinux環境でカラーオプションを切り替える
 if [ $isMac -eq 1 ]; then
-  alias ls='ls -G'
-  alias ll='ls -lG'
-  alias la='ls -laG'
+  alias ls='ls -hG'
+  alias ll='ls -lhG'
+  alias la='ls -lhaG'
   alias l='clear && ll'
 else
-  alias ls='ls --color=auto'
-  alias ls='ls --color=auto'
-  alias ll='ls -l --color=auto'
-  alias la='ls -la --color=auto'
+  alias ls='ls -h --color=auto'
+  alias ls='ls -h --color=auto'
+  alias ll='ls -lh --color=auto'
+  alias la='ls -lha --color=auto'
   alias l='clear && ll'
 fi
 # lsのディレクトリの青字が黒背景だと見づらいので紫に変更(macは効かないかも)
@@ -46,6 +46,9 @@ alias home='cd ~'
 alias cp='cp -i'
 alias mv='mv -i'
 alias rm='rm -i'
+
+alias ff='find . -type f -name'
+alias fd='find . -type d -name'
 
 alias d='docker'
 # show in Finder
