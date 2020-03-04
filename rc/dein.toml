@@ -83,8 +83,8 @@ repo = 'mhinz/vim-startify'
 [[plugins]]
 repo = 'yuttie/comfortable-motion.vim'
 
-[[plugins]]
-repo = 'leafgarland/typescript-vim'
+[[plugins]] # toml syntax highlight
+repo = 'cespare/vim-toml'
 
-[[plugins]]
-repo = 'MaxMEllon/vim-jsx-pretty'
+[[plugins]] # pug syntax highlight
+repo = 'digitaltoad/vim-pug'

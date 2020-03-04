@@ -1,3 +1,15 @@
 [[plugins]]
 repo = 'pangloss/vim-javascript'
-on_ft = ['javascript']
+on_ft = ['javascript', 'typescript', 'javascript.jsx', 'typescript.tsx']
+
+[[plugins]]
+repo = 'leafgarland/typescript-vim'
+on_ft = ['typescript', 'typescript.tsx']
+
+[[plugins]]
+repo = 'MaxMEllon/vim-jsx-pretty'
+on_ft = ['javascript.jsx', 'typescript.tsx']
+
+[[plugins]] # Syntax highlighting and indenting for TSX
+repo = 'ianks/vim-tsx'
+on_ft = ['typescript.tsx']

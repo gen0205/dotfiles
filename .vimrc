@@ -115,6 +115,8 @@ set autoindent
 " ==================
 " indent settings
 " ==================
+au BufRead,BufNewFile *.jsx set filetype=javascript.jsx
+au BufRead,BufNewFile *.tsx set filetype=typescript.tsx
 filetype on
 filetype plugin on
 filetype indent on
