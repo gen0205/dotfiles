@@ -22,12 +22,15 @@ if dein#load_state(s:dein_dir)
   " 予め TOML ファイル（後述）を用意しておく
   let g:rc_dir    = expand('~/.vim/rc')
   let s:toml      = g:rc_dir . '/dein.toml'
+  let s:for_vim_toml = g:rc_dir . '/dein_for_vim.toml'
   let s:lazy_toml = g:rc_dir . '/dein_lazy.toml'
 
   " TOML を読み込み、キャッシュしておく
   call dein#load_toml(s:toml,      {'lazy': 0})
   call dein#load_toml(s:lazy_toml, {'lazy': 1})
-
+  if !has('nvim')
+    call dein#load_toml(s:for_vim_toml, {'lazy': 0})
+  endif
   " 設定終了
   call dein#end()
   call dein#save_state()
@@ -182,7 +185,11 @@ nmap <Esc>f :vimgrep // *<left><left><left>
 nnoremap <Leader>r :%s///g<left><left><left>
 " redo
 nnoremap U <C-R>
-
+" for nvim
+if has('nvim')
+  " To map <Esc> to exit terminal-mode: >
+  tnoremap <Esc> <C-\><C-n>
+endif
 " ==================
 " カスタムコマンド
 " ==================
