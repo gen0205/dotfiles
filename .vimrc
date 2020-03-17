@@ -338,6 +338,7 @@ endif
 "            \ 'source': 'find . -type d -name .git -prune -o ! -name .DS_Store',
 "            \ 'down': '40%'}))
 nnoremap <Leader>p :Files<CR>
+nnoremap <Leader>b :Buffers<CR>
 " :Files コマンドをpreview付きにする(batコマンドが使えれば色もつける)
 command! -bang -nargs=? -complete=dir Files
     \ call fzf#vim#files(<q-args>, fzf#vim#with_preview({'options': ['--layout=reverse', '--info=inline']}), <bang>0)
