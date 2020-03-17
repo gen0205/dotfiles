@@ -122,7 +122,10 @@ set autoindent
 " ==================
 " indent settings
 " ==================
-au BufRead,BufNewFile *.jsx set filetype=javascript.jsx
+augroup FiletypeGroup
+  autocmd!
+  au BufNewFile,BufRead *.jsx set filetype=javascript.jsx
+augroup END
 au BufRead,BufNewFile *.tsx set filetype=typescript.tsx
 filetype on
 filetype plugin on
@@ -210,8 +213,23 @@ let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
 \   'javascript': ['eslint'],
 \}
+let g:ale_linter_aliases = {
+\   'jsx': ['css', 'javascript'],
+\   'vue': ['vue', 'javascript'],
+\}
+let g:ale_linters = {
+\   'jsx': ['stylelint', 'eslint'],
+\   'vue': ['eslint', 'vls'],
+\}
 " Set this variable to 1 to fix files when you save them.
 let g:ale_fix_on_save = 1
+" LSP機能を無効化する場合は1をセット
+let g:ale_disable_lsp = 0
+" typescriptのオートインポート機能を有効化(デフォルトは無効)
+let g:ale_completion_tsserver_autoimport = 1
+let g:ale_echo_msg_error_str = 'E'
+let g:ale_echo_msg_warning_str = 'W'
+let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 " ------------------
 " NERDTree
 " ------------------
