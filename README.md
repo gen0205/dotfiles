@@ -30,7 +30,7 @@ for `liuchengxu/vim-clap` plugin
 
 ### exa
 
-A modern version of ‘ls’. 
+A modern version of ‘ls’.
 
 > https://the.exa.website/
 
@@ -52,6 +52,14 @@ A simple, fast and user-friendly alternative to 'find'
 
 > https://github.com/sharkdp/fd
 
+## recommends(not require)
+
+### lazygit
+
+simple terminal UI for git commands
+
+> https://github.com/jesseduffield/lazygit
+
 ## TODO
 
 - vim LSP
@@ -59,3 +67,4 @@ A simple, fast and user-friendly alternative to 'find'
 - vim reloading when edited by other environments
 - tmux settings
 - zsh settings
+  - https://github.com/junegunn/fzf/wiki/examples
