@@ -5,6 +5,8 @@ if [ "$(uname)" = 'Darwin' ]; then
   isMac=1
 fi
 
+alias fzf='fzf-tmux'
+
 # エイリアスの設定
 # ls（カラー表示）
 # mac環境とlinux環境でカラーオプションを切り替える
@@ -73,8 +75,8 @@ if type nvim > /dev/null 2>&1; then
   alias vim='nvim'
 fi
 
-alias fv='vim $(fzf)'
-alias fvi='vim $(fzf)'
+alias fv='vim $(fzf-tmux)'
+alias fvi='vim $(fzf-tmux)'
 
 alias relogin='exec $SHELL -l'
 
@@ -158,13 +160,13 @@ export FZF_DEFAULT_OPTS="--height 40% --reverse --border --cycle --preview ${FZF
 ## fvimコマンド-リポジトリ管理のファイルをFZFで開き選択したファイルをvimで開く
 fvim() {
   files=$(git ls-files) &&
-  selected_files=$(echo "$files" | fzf -m) &&
+  selected_files=$(echo "$files" | fzf-tmux -m) &&
   vim $selected_files
 }
 ## fgaコマンド-ファイルにどんな差分があるのかを見ながら、ステージングするファイルを選択する
 fga() {
   modified_files=$(git status --short | awk '{print $2}') &&
-  selected_files=$(echo "$modified_files" | fzf -m --preview 'git diff --color=always {}') &&
+  selected_files=$(echo "$modified_files" | fzf-tmux -m --preview 'git diff --color=always {}') &&
   git add $selected_files
 }
 # from https://github.com/junegunn/fzf/wiki/examples
@@ -187,7 +189,7 @@ fco_preview() {
     git --no-pager tag | awk '{print "\x1b[35;1mtag\x1b[m\t" $1}') || return
   target=$(
     (echo "$branches"; echo "$tags") |
-    fzf --no-hscroll --no-multi -n 2 \
+    fzf-tmux --no-hscroll --no-multi -n 2 \
         --ansi --preview="git --no-pager log -150 --pretty=format:%s '..{2}'") || return
   git checkout $(awk '{print $2}' <<<"$target" )
 }
