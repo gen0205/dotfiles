@@ -28,6 +28,12 @@ for `liuchengxu/vim-clap` plugin
 
 ### tmux
 
+### exa
+
+A modern version of ‘ls’. 
+
+> https://the.exa.website/
+
 ### ripgrep
 
 ripgrep recursively searches directories for a regex pattern
