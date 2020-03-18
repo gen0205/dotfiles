@@ -66,6 +66,8 @@ if type nvim > /dev/null 2>&1; then
   alias vim='nvim'
 fi
 
+alias relogin='exec $SHELL -l'
+
 # ggrks
 ggrks(){
   local a="/Applications"
