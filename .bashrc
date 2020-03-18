@@ -8,7 +8,13 @@ fi
 # エイリアスの設定
 # ls（カラー表示）
 # mac環境とlinux環境でカラーオプションを切り替える
-if [ $isMac -eq 1 ]; then
+# exaコマンドが使える場合はそちらを使う
+if type exa > /dev/null 2>&1; then
+  alias ls='exa -g --time-style=long-iso'
+  alias ll='ls -l --header --git'
+  alias la='ls -la --header --git'
+  alias l='clear && ll'
+elif [ $isMac -eq 1 ]; then
   alias ls='ls -hG'
   alias ll='ls -lhG'
   alias la='ls -lhaG'
