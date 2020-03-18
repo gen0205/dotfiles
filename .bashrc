@@ -66,6 +66,18 @@ if type nvim > /dev/null 2>&1; then
   alias vim='nvim'
 fi
 
+# ggrks
+ggrks(){
+  local a="/Applications"
+  local u="https://www.google.co.jp/search?q="
+  case $1 in
+    -c) shift; open "${u}${*// /+}" -a "${a}/Google Chrome.app";;
+    -f) shift; open "${u}${*// /+}" -a "${a}/Firefox.app";;
+    -s) shift; open "${u}${*// /+}" -a "${a}/Safari.app";;
+     *) open "${u}${*// /+}";;
+  esac
+}
+
 # プロンプトの設定
 #PS1='\[\e[34m\]\w \[\e[37m\]\$\[\e[0m\] '
 # git現在のブランチをプロンプトに表示する
@@ -113,7 +125,7 @@ HISTCONTROL=ignoreboth
 
 # set a fancy prompt (non-color, unless we know we "want" color)
 case "$TERM" in
-    xterm-color|*-256color) color_prompt=yes;;
+  xterm-color|*-256color) color_prompt=yes;;
 esac
 
 # FZF
