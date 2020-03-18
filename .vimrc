@@ -332,11 +332,6 @@ if executable('rg')
         \   'rg -S --line-number --no-heading --hidden --follow --glob "!.git" '.shellescape(<q-args>), 0,
         \   fzf#vim#with_preview({'options': '--exact --reverse --delimiter : --nth 3..'}, 'up:50%:wrap'))
 endif
-" TODO: 以下は新しいmap設定を採用したため削除する予定
-"nnoremap <Leader>p :FZFFileList<CR>
-"command! FZFFileList call fzf#run(fzf#wrap({
-"            \ 'source': 'find . -type d -name .git -prune -o ! -name .DS_Store',
-"            \ 'down': '40%'}))
 nnoremap <Leader>p :Files<CR>
 nnoremap <Leader>b :Buffers<CR>
 " :Files コマンドをpreview付きにする(batコマンドが使えれば色もつける)

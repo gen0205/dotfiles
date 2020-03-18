@@ -48,7 +48,10 @@ alias mv='mv -i'
 alias rm='rm -i'
 
 alias ff='find . -type f -name'
-alias fd='find . -type d -name'
+if !(type fd > /dev/null 2>&1); then
+  # fdコマンドがインストールされていない場合
+  alias fd='find . -type d -name'
+fi
 
 alias d='docker'
 # show in Finder
@@ -115,15 +118,19 @@ esac
 
 # FZF
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
-if type rg > /dev/null 2>&1
-then
+if type rg > /dev/null 2>&1; then
   #rg(ripgrep)コマンドが使用可能な場合
   #fzfコマンドでripgrepを使用する。また、隠しファイルも結果に含み、リンクの場合はリンク先ファイルを読み、.git/フォルダは無視するようにする。
   #上記はfzf.vimの結果にも反映される
   export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!.git"'
 fi
 #fzfコマンド実行時のデフォルトオプション
-export FZF_DEFAULT_OPTS='--height 40% --reverse --border --cycle'
+if type bat > /dev/null 2>&1; then
+  FZF_PREVIEW_COMMNAD='"bat  --color=always --style=header,grid --line-range :100 {}"'
+else
+  FZF_PREVIEW_COMMNAD='"head -100 {}"'
+fi
+export FZF_DEFAULT_OPTS="--height 40% --reverse --border --cycle --preview ${FZF_PREVIEW_COMMNAD}"
 ## fvimコマンド-リポジトリ管理のファイルをFZFで開き選択したファイルをvimで開く
 fvim() {
   files=$(git ls-files) &&
@@ -133,6 +140,6 @@ fvim() {
 ## fgaコマンド-ファイルにどんな差分があるのかを見ながら、ステージングするファイルを選択する
 fga() {
   modified_files=$(git status --short | awk '{print $2}') &&
-  selected_files=$(echo "$modified_files" | fzf -m --preview 'git diff {}') &&
+  selected_files=$(echo "$modified_files" | fzf -m --preview 'git diff --color=always {}') &&
   git add $selected_files
 }
