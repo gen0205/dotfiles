@@ -46,6 +46,7 @@ alias gst='git status'
 alias gco='git checkout'
 alias gf='git fetch'
 alias gc='git commit -m'
+alias lg='lazygit'
 
 alias home='cd ~'
 
