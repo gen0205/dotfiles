@@ -75,9 +75,6 @@ if type nvim > /dev/null 2>&1; then
   alias vim='nvim'
 fi
 
-alias fv='vim $(fzf-tmux)'
-alias fvi='vim $(fzf-tmux)'
-
 alias relogin='exec $SHELL -l'
 
 # ggrks
@@ -150,19 +147,24 @@ if type rg > /dev/null 2>&1; then
   #上記はfzf.vimの結果にも反映される
   export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!.git"'
 fi
-#fzfコマンド実行時のデフォルトオプション
+# fzf --preview時のオプション
 if type bat > /dev/null 2>&1; then
-  FZF_PREVIEW_COMMNAD='"bat  --color=always --style=header,grid --line-range :100 {}"'
+  # batがある場合はbatコマンドを使用
+  FZF_PREVIEW="bat --color=always --style=header,grid,numbers --line-range :100 {}"
 else
-  FZF_PREVIEW_COMMNAD='"head -100 {}"'
+  FZF_PREVIEW="head -100 {}"
 fi
-export FZF_DEFAULT_OPTS="--height 40% --reverse --border --cycle --preview ${FZF_PREVIEW_COMMNAD}"
+#fzfコマンド実行時のデフォルトオプション
+export FZF_DEFAULT_OPTS="--height 40% --reverse --border --cycle"
 ## fvimコマンド-リポジトリ管理のファイルをFZFで開き選択したファイルをvimで開く
 fvim() {
   files=$(git ls-files) &&
-  selected_files=$(echo "$files" | fzf-tmux -m) &&
+  selected_files=$(echo "$files" | fzf-tmux -m --preview "$FZF_PREVIEW") &&
   vim $selected_files
 }
+alias fv='vim $(fzf-tmux -m --preview "$FZF_PREVIEW")'
+alias fvi='vim $(fzf-tmux -m --preview "$FZF_PREVIEW")'
+
 ## fgaコマンド-ファイルにどんな差分があるのかを見ながら、ステージングするファイルを選択する
 fga() {
   modified_files=$(git status --short | awk '{print $2}') &&
