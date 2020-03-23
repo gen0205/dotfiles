@@ -41,6 +41,11 @@ if dein#check_install()
   call dein#install()
 endif
 
+" 削除可能なpluginがあったら削除
+if 0 < len(dein#check_clean())
+  call map(dein#check_clean(), "delete(v:val, 'rf')")
+  call dein#recache_runtimepath()
+endif
 " ==================
 " 色系
 " ==================
@@ -301,7 +306,7 @@ let g:indent_guides_auto_colors = 0
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=#262626 ctermbg=gray
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#3c3c3c ctermbg=darkgray
 let g:indent_guides_guide_size = 1
-let g:indent_guides_enable_on_vim_startup = 1
+let g:indent_guides_enable_on_vim_startup = 0
 let g:indent_guides_exclude_filetypes = ['help', 'nerdtree', 'startify', 'fzf']
 " ------------------
 " Yggdroot/indentLine
@@ -349,3 +354,8 @@ let g:comfortable_motion_interval = 3000.0 / 60
 " ------------------
 " GitGutterのdiff取得感覚を100msecに変更(デフォルトは4000msec)
 set updatetime=100
+" ------------------
+" Clap
+" ------------------
+" file history (MRU)
+"map <Leader>f :Clap history<CR>
