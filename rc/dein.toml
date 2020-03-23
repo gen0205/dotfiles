@@ -43,9 +43,6 @@ repo = 'easymotion/vim-easymotion'
 repo = 'vim-scripts/mru.vim'
 
 [[plugins]]
-repo = 'posva/vim-vue'
-
-[[plugins]]
 repo = 'preservim/nerdcommenter'
 
 [[plugins]]
@@ -94,9 +91,6 @@ repo = 'mhinz/vim-startify'
 [[plugins]]
 repo = 'yuttie/comfortable-motion.vim'
 
-[[plugins]] # toml syntax highlight
-repo = 'cespare/vim-toml'
-
 [[plugins]] # pug syntax highlight
 repo = 'digitaltoad/vim-pug'
 
@@ -106,3 +100,34 @@ repo = 'AndrewRadev/splitjoin.vim'
 # Vim-clap is a modern generic interactive finder and dispatcher, based on the newly feature: floating_win of neovim or popup of vim. The goal of vim-clap is to work everywhere out of the box, with fast response.
 [[plugins]]
 repo = 'liuchengxu/vim-clap'
+
+# ===============
+# syntax highlight
+# ===============
+
+# scss
+[[plugins]]
+repo = 'cakebaker/scss-syntax.vim'
+
+# vue
+[[plugins]]
+repo = 'posva/vim-vue'
+
+# js
+[[plugins]]
+repo = 'pangloss/vim-javascript'
+
+# ts #なくても動いているっぽいのでコメントアウト
+#[[plugins]]
+#repo = 'leafgarland/typescript-vim'
+
+# jsx
+[[plugins]]
+repo = 'MaxMEllon/vim-jsx-pretty'
+
+# tsx
+[[plugins]] # Syntax highlighting and indenting for TSX
+repo = 'ianks/vim-tsx'
+
+[[plugins]] # toml syntax highlight
+repo = 'cespare/vim-toml'
