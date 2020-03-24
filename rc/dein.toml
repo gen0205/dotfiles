@@ -91,9 +91,6 @@ repo = 'mhinz/vim-startify'
 [[plugins]]
 repo = 'yuttie/comfortable-motion.vim'
 
-[[plugins]] # pug syntax highlight
-repo = 'digitaltoad/vim-pug'
-
 [[plugins]] # Switch between single-line and multiline forms of code
 repo = 'AndrewRadev/splitjoin.vim'
 
@@ -112,6 +109,10 @@ repo = 'cakebaker/scss-syntax.vim'
 # vue
 [[plugins]]
 repo = 'posva/vim-vue'
+
+# pug
+[[plugins]]
+repo = 'digitaltoad/vim-pug'
 
 # js
 [[plugins]]
