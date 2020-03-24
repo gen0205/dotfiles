@@ -369,3 +369,4 @@ set updatetime=100
 " ------------------
 " file history (MRU)
 "map <Leader>f :Clap history<CR>
+map <Leader>m :Clap marks<CR>
