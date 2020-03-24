@@ -159,6 +159,8 @@ autocmd QuickFixCmdPost *grep* cwindow
 " ==================
 " jjでESC
 inoremap jj <Esc>
+" <C-L>でdeleteキー
+inoremap <C-L> <DEL>
 " ESC連打でハイライト解除
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
 " 折り返し時に表示行単位での移動できるようにする
