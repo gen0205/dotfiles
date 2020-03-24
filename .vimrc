@@ -348,12 +348,14 @@ let g:cheatsheet#cheat_file = '~/.vim/.cheatsheet.md'
 " ------------------
 " FZF
 " ------------------
+" popup(vim)またはfloating(nvim)でFZFを起動する
+let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6 } }
 nnoremap <Leader>g :Rg<Space>
 if executable('rg')
     command! -bang -nargs=* Rg
         \ call fzf#vim#grep(
         \   'rg -S --line-number --no-heading --hidden --follow --glob "!.git" '.shellescape(<q-args>), 0,
-        \   fzf#vim#with_preview({'options': '--exact --reverse --delimiter : --nth 3..'}, 'up:50%:wrap'))
+        \   fzf#vim#with_preview({'options': '--exact --reverse --delimiter : --nth 3..'}, 'down:50%:wrap'))
 endif
 nnoremap <Leader>p :Files<CR>
 nnoremap <Leader>b :Buffers<CR>
