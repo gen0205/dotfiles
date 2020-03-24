@@ -270,6 +270,12 @@ map <Leader>k <Plug>(easymotion-k)
 map <Leader>h <Plug>(easymotion-linebackward)
 let g:EasyMotion_smartcase = 1
 " ------------------
+" haya14busa/incsearch.vim
+" ------------------
+map /  <Plug>(incsearch-forward)
+map ?  <Plug>(incsearch-backward)
+map g/ <Plug>(incsearch-stay)
+" ------------------
 " MRU
 " ------------------
 " <leader> + f でMRU(最近開いたファイルリスト)を開く

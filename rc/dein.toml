@@ -40,6 +40,9 @@ repo = 'vim-airline/vim-airline'
 repo = 'easymotion/vim-easymotion'
 
 [[plugins]]
+repo = 'haya14busa/incsearch.vim'
+
+[[plugins]]
 repo = 'vim-scripts/mru.vim'
 
 [[plugins]]
