@@ -111,6 +111,19 @@ set wildmode=list:longest
 set ruler
 
 " ==================
+" indent settings
+" ==================
+filetype on
+filetype plugin on
+filetype indent on
+
+augroup FiletypeGroup
+  autocmd!
+  au BufNewFile,BufRead *.jsx set filetype=javascript.jsx
+augroup END
+au BufRead,BufNewFile *.tsx set filetype=typescript.tsx
+
+" ==================
 " Tab系
 " ==================
 " 不可視文字を可視化(タブが「▸-」と表示される)
@@ -123,18 +136,8 @@ set tabstop=2
 set shiftwidth=2
 " 改行した時に、同じレベルのインデントにする
 set autoindent
-
-" ==================
-" indent settings
-" ==================
-augroup FiletypeGroup
-  autocmd!
-  au BufNewFile,BufRead *.jsx set filetype=javascript.jsx
-augroup END
-au BufRead,BufNewFile *.tsx set filetype=typescript.tsx
-filetype on
-filetype plugin on
-filetype indent on
+au FileType php setlocal expandtab shiftwidth=4 softtabstop=4
+au FileType python setlocal expandtab shiftwidth=4 softtabstop=4
 
 " ==================
 " 検索系
