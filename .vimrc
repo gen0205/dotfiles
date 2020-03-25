@@ -194,6 +194,13 @@ nnoremap <C-p> gT
 " 検索
 " vimgrep
 nmap <Esc>f :vimgrep // *<left><left><left>
+" 検索時に画面中央に持ってくる
+nmap n nzz
+nmap N Nzz
+nmap * *zz
+nmap # #zz
+nmap g* g*zz
+nmap g# g#zz
 " 置換系
 " <Leader>r で一括置換フォーマットを呼び出す。
 nnoremap <Leader>r :%s///g<left><left><left>
