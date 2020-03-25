@@ -287,10 +287,10 @@ map /  <Plug>(incsearch-forward)
 map ?  <Plug>(incsearch-backward)
 map g/ <Plug>(incsearch-stay)
 " ------------------
-" MRU
+" MRU TODO: FZFで代用できるので消すかも
 " ------------------
 " <leader> + f でMRU(最近開いたファイルリスト)を開く
-map <Leader>f :MRU<CR>
+" map <Leader>f :MRU<CR>
 " ------------------
 " posva/vim-vue
 " ------------------
@@ -359,15 +359,30 @@ let g:cheatsheet#cheat_file = '~/.vim/.cheatsheet.md'
 " ------------------
 " popup(vim)またはfloating(nvim)でFZFを起動する
 let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6 } }
-nnoremap <Leader>g :Rg<Space>
 if executable('rg')
     command! -bang -nargs=* Rg
         \ call fzf#vim#grep(
         \   'rg -S --line-number --no-heading --hidden --follow --glob "!.git" '.shellescape(<q-args>), 0,
         \   fzf#vim#with_preview({'options': '--exact --reverse --delimiter : --nth 3..'}, 'down:50%:wrap'))
 endif
+" RGコマンド (from :h fzf-vim)
+" :Rgと異なり、検索ワードの再入力する為にコマンドを再実行する必要がない。
+function! RipgrepFzf(query, fullscreen)
+  let command_fmt = 'rg --column --line-number --no-heading --color=always --smart-case --hidden --follow --glob "!.git" %s || true'
+  let initial_command = printf(command_fmt, shellescape(a:query))
+  let reload_command = printf(command_fmt, '{q}')
+  let spec = {'options': ['--phony', '--query', a:query, '--bind', 'change:reload:'.reload_command]}
+  call fzf#vim#grep(initial_command, 1, fzf#vim#with_preview(spec), a:fullscreen)
+endfunction
+command! -nargs=* -bang RG call RipgrepFzf(<q-args>, <bang>0)
+
 nnoremap <Leader>p :Files<CR>
 nnoremap <Leader>b :Buffers<CR>
+nnoremap <Leader>g :Rg<Space>
+nnoremap <Leader>G :RG<Space>
+nnoremap <Leader>m :Marks<CR>
+nnoremap <Leader>f :History<CR>
+nnoremap <Leader>c :BCommits<CR>
 " :Files コマンドをpreview付きにする(batコマンドが使えれば色もつける)
 command! -bang -nargs=? -complete=dir Files
     \ call fzf#vim#files(<q-args>, fzf#vim#with_preview({'options': ['--layout=reverse', '--info=inline']}), <bang>0)
@@ -385,7 +400,8 @@ let g:comfortable_motion_interval = 3000.0 / 60
 set updatetime=100
 " ------------------
 " Clap
+" TODO:FZFで十分代用できるのでいらないかも。あとfloatingウィンドウが消えないバグがあって使いづらい
 " ------------------
 " file history (MRU)
 "map <Leader>f :Clap history<CR>
-map <Leader>m :Clap marks<CR>
+" map <Leader>m :Clap marks<CR>
