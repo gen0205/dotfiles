@@ -261,6 +261,8 @@ let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
 let g:NERDTreeWinSize = 30
+" 隠しファイルをデフォルトで表示させる
+let NERDTreeShowHidden=1
 " ------------------
 " NERDTreeTabs
 " ------------------
