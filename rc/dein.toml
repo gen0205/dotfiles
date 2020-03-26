@@ -67,6 +67,9 @@ repo = 'vim-scripts/IndexedSearch'
 [[plugins]]
 repo = 'Raimondi/delimitMate'
 
+[[plugins]] # Auto close parentheses and repeat by dot dot dot...
+repo = 'cohama/lexima.vim'
+
 [[plugins]]
 repo = 'Yggdroot/indentLine'
 
