@@ -1,3 +1,9 @@
+set encoding=utf-8
+scriptencoding utf-8
+" vimrc再読み込み時のautocmdの初期化を行う。複数autocmdが登録されることを無効化する
+augroup vimrc
+  autocmd!
+augroup END
 " ==================
 " dein settings
 " ==================
@@ -155,7 +161,7 @@ set wrapscan
 " 検索語をハイライト表示
 set hlsearch
 " <Leader>を<Space>(半角スペース)に置き換え
-let mapleader = "\<Space>"
+let g:mapleader = "\<Space>"
 " :vimgrepや:grepや:Ggrepでも自動的にquickfix-windowを開くようにする
 autocmd QuickFixCmdPost *grep* cwindow
 
@@ -263,11 +269,11 @@ let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
 " NERDTree
 " ------------------
 " Make nerdtree look nice
-let NERDTreeMinimalUI = 1
-let NERDTreeDirArrows = 1
+let g:NERDTreeMinimalUI = 1
+let g:NERDTreeDirArrows = 1
 let g:NERDTreeWinSize = 30
 " 隠しファイルをデフォルトで表示させる
-let NERDTreeShowHidden=1
+let g:NERDTreeShowHidden=1
 " ------------------
 " NERDTreeTabs
 " ------------------
