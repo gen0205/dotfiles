@@ -79,6 +79,8 @@ set autoread
 set hidden
 " 入力中のコマンドをステータスに表示する
 set showcmd
+" 最低でも上下に表示する行数
+set scrolloff=5
 if has('nvim')
   " yankした内容をクリップボードと共有する
   set clipboard=unnamed
