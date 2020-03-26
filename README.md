@@ -20,10 +20,19 @@ for `liuchengxu/vim-clap` plugin
 ### python3
 
 - pyenv recommended
+  - TODO: replace to asdf.vm
+- after install python3.x
+
+`pip3 install --user pynvim`
+
+after. launch nvim and execute follow command.
+
+`:UpdateRemotePlugins`
 
 ### nodejs
 
 - nodenv recommended
+  - TODO: replace to asdf.vm
 - require v8.10.0 <
 
 ### tmux
@@ -63,8 +72,13 @@ simple terminal UI for git commands
 ## TODO
 
 - vim LSP
+  - COCが有力？
+  - LSP Settings plugin
+    - https://github.com/mattn/vim-lsp-settings
 - ALE format(to show linter name)
 - vim reloading when edited by other environments
 - tmux settings
 - zsh settings
   - https://github.com/junegunn/fzf/wiki/examples
+- asdf-vm dotfiles
+  - https://github.com/asdf-vm/asdf
