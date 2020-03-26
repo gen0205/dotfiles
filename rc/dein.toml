@@ -3,7 +3,10 @@ repo = 'Shougo/dein.vim'
 
 [[plugins]]
 repo = 'Shougo/deoplete.nvim'
-hook_add = 'let g:deoplete#enable_at_startup = 1'
+hook_add = '''
+let g:deoplete#enable_at_startup = 0
+autocmd InsertEnter * call deoplete#enable()
+'''
 
 #[[plugins]]
 #repo = 'neoclide/coc.nvim'
