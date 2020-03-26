@@ -67,12 +67,13 @@ alias d='docker'
 alias f='open -a Finder ./'
 alias o='open'
 alias q='exit'
-alias v='vim'
 
 if type nvim > /dev/null 2>&1; then
   alias v='nvim'
   alias vi='nvim'
   alias vim='nvim'
+else
+  alias v='vim'
 fi
 
 alias relogin='exec $SHELL -l'
