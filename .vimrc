@@ -369,7 +369,11 @@ let g:cheatsheet#cheat_file = '~/.vim/.cheatsheet.md'
 " FZF
 " ------------------
 " popup(vim)またはfloating(nvim)でFZFを起動する
-let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6 } }
+" popupまたはfloathinに対応しているバージョンの場合にだけ設定する
+" nvim: 0.4以降, vim: 8.2以降
+if has('nvim-0.4') || 802 <= v:version
+  let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6 } }
+endif
 if executable('rg')
     command! -bang -nargs=* Rg
         \ call fzf#vim#grep(
