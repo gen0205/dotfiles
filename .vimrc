@@ -73,8 +73,8 @@ colorscheme dracula
 " ==================
 " setting
 " ==================
-"文字コードをUTF-8に設定
-set fenc=utf-8
+" 既存のファイルを開くときはとりあえず utf-8
+set fileencodings=utf-8,cp932
 " バックアップファイルを作らない
 set nobackup
 " スワップファイルを作らない
