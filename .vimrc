@@ -125,10 +125,7 @@ filetype on
 filetype plugin on
 filetype indent on
 
-augroup FiletypeGroup
-  autocmd!
-  au BufNewFile,BufRead *.jsx set filetype=javascript.jsx
-augroup END
+au BufNewFile,BufRead *.jsx set filetype=javascript.jsx
 au BufRead,BufNewFile *.tsx set filetype=typescript.tsx
 
 " ==================
@@ -347,6 +344,9 @@ autocmd VimEnter *
       \ | endif
 " リモートファイル関連の読込が遅くなる問題対策
 let g:startify_skiplist = ['^/mnt/nfs']
+" Startify開いている間はシングルmapを無効化
+autocmd User Startified for key in ['b','s','t','v'] |
+      \ execute 'nunmap <buffer>' key | endfor
 " ------------------
 " nathanaelkane/vim-indent-guides
 " ------------------
