@@ -274,6 +274,8 @@ let g:NERDTreeDirArrows = 1
 let g:NERDTreeWinSize = 30
 " 隠しファイルをデフォルトで表示させる
 let g:NERDTreeShowHidden=1
+" ディレクトリをvimで開いた時、netrwで開く
+let g:NERDTreeHijackNetrw = 0
 " ------------------
 " NERDTreeTabs
 " ------------------
@@ -336,6 +338,15 @@ endfunction
 " ------------------
 " ファイル起動時、vcsのルートディレクトリに移動
 let g:startify_change_to_vcs_root = 1
+" 起動時、NERDTreeも起動する
+autocmd VimEnter *
+      \   if !argc()
+      \ |   Startify
+      \ |   NERDTree
+      \ |   wincmd w
+      \ | endif
+" リモートファイル関連の読込が遅くなる問題対策
+let g:startify_skiplist = ['^/mnt/nfs']
 " ------------------
 " nathanaelkane/vim-indent-guides
 " ------------------
