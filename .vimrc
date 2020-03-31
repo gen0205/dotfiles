@@ -19,8 +19,6 @@ if &runtimepath !~# '/dein.vim'
   endif
   execute 'set runtimepath^=' . fnamemodify(s:dein_repo_dir, ':p')
 endif
-
-" 設定開始
 if dein#load_state(s:dein_dir)
   call dein#begin(s:dein_dir)
 
@@ -57,7 +55,7 @@ endif
 " ==================
 " 行番号の色
 " colorschemeの設定前に書くこと
-autocmd ColorScheme * highlight LineNr ctermfg=207
+"autocmd ColorScheme * highlight LineNr ctermfg=207
 "カラースキーマを設定
 " colorscheme molokai
 syntax on
@@ -345,7 +343,7 @@ autocmd VimEnter *
 " リモートファイル関連の読込が遅くなる問題対策
 let g:startify_skiplist = ['^/mnt/nfs']
 " Startify開いている間はシングルmapを無効化
-autocmd User Startified for key in ['b','s','t','v'] |
+autocmd User Startified for key in ['b', 's', 't', 'v'] |
       \ execute 'nunmap <buffer>' key | endfor
 " ------------------
 " nathanaelkane/vim-indent-guides
