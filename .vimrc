@@ -333,13 +333,6 @@ endfunction
 " ------------------
 " ファイル起動時、vcsのルートディレクトリに移動
 let g:startify_change_to_vcs_root = 1
-" 起動時、NERDTreeも起動する
-autocmd VimEnter *
-      \   if !argc()
-      \ |   Startify
-      \ |   NERDTree
-      \ |   wincmd w
-      \ | endif
 " リモートファイル関連の読込が遅くなる問題対策
 let g:startify_skiplist = ['^/mnt/nfs']
 " Startify開いている間はシングルmapを無効化
