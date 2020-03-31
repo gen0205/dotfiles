@@ -228,7 +228,7 @@ endif
 " カスタムコマンド
 " ==================
 " .vimrc再読み込み
-command! Refresh source ~/.vimrc | e
+command! Refresh source $MYVIMRC | e
 " neovimでもterminalを分割して開く
 if has('nvim')
   command! -nargs=* Term split | terminal <args>
