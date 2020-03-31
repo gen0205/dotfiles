@@ -354,12 +354,13 @@ autocmd User Startified for key in ['b', 's', 't', 'v'] |
 " nathanaelkane/vim-indent-guides
 " ------------------
 " Tab可視化色設定
-let g:indent_guides_auto_colors = 0
-autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=#262626 ctermbg=gray
-autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#3c3c3c ctermbg=darkgray
+hi IndentGuidesOdd  guibg=#262626 ctermbg=gray
+hi IndentGuidesEven guibg=#3c3c3c ctermbg=darkgray
 let g:indent_guides_guide_size = 1
 let g:indent_guides_enable_on_vim_startup = 0
 let g:indent_guides_exclude_filetypes = ['help', 'nerdtree', 'startify', 'fzf']
+let g:indent_guides_default_mapping = 0
+nmap <silent> <Leader>ig <Plug>IndentGuidesToggle
 " ------------------
 " Yggdroot/indentLine
 " ------------------
