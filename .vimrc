@@ -229,6 +229,11 @@ endif
 " ==================
 " .vimrc再読み込み
 command! Refresh source ~/.vimrc | e
+" neovimでもterminalを分割して開く
+if has('nvim')
+  command! -nargs=* Term split | terminal <args>
+  command! -nargs=* Termv vsplit | terminal <args>
+endif
 
 " ==================
 " vim plugin設定
