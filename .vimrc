@@ -85,6 +85,9 @@ set hidden
 set showcmd
 " 最低でも上下に表示する行数
 set scrolloff=5
+" <C-a> や <C-x> で数値を増減させるときに8進数を無効にする
+set nrformats-=octal
+
 if has('nvim')
   " yankした内容をクリップボードと共有する
   set clipboard=unnamed
@@ -169,6 +172,10 @@ inoremap jj <Esc>
 inoremap <C-L> <DEL>
 " ESC連打でハイライト解除
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
+" 行末までをヤンク
+nnoremap Y y$
+" カーソル行を空行化
+nnoremap cc 0D
 " 折り返し時に表示行単位での移動できるようにする
 nnoremap j gj
 nnoremap k gk
@@ -221,7 +228,7 @@ endif
 " カスタムコマンド
 " ==================
 " .vimrc再読み込み
-command! Refresh source ~/.vimrc
+command! Refresh source ~/.vimrc | e
 
 " ==================
 " vim plugin設定
