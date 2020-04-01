@@ -41,6 +41,11 @@ repo = 'Xuyuanp/nerdtree-git-plugin'
 [[plugins]]
 repo = 'vim-airline/vim-airline'
 
+# Adds file type icons to Vim plugins such as: NERDTree, vim-airline, CtrlP, unite, Denite, lightline, vim-startify and many more
+# nerdフォント(https://github.com/ryanoasis/nerd-fonts#font-installation)を適用させる必要がある
+[[plugins]]
+repo = 'ryanoasis/vim-devicons'
+
 [[plugins]]
 repo = 'easymotion/vim-easymotion'
 

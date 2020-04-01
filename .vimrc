@@ -265,6 +265,8 @@ let g:ale_echo_msg_format = '[%linter%]%code: %%s [%severity%]'
 " ------------------
 " vim-airline
 " ------------------
+" powerline系フォントを有効にする
+let g:airline_powerline_fonts = 1
 " Automatically displays all buffers when there's only one tab open.
 let g:airline#extensions#tabline#enabled = 1
 " Separators can be configured independently for the tabline, so here is how you can define "straight" tabs:
