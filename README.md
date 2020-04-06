@@ -75,9 +75,6 @@ simple terminal UI for git commands
   - COCが有力？
   - LSP Settings plugin
     - https://github.com/mattn/vim-lsp-settings
-- ALE format(to show linter name)
-- vim reloading when edited by other environments
-- tmux settings
 - zsh settings
   - https://github.com/junegunn/fzf/wiki/examples
 - asdf-vm dotfiles
