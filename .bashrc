@@ -77,6 +77,7 @@ else
 fi
 
 alias relogin='exec $SHELL -l'
+alias t='tm'
 
 # ggrks
 ggrks(){
