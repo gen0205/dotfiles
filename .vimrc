@@ -208,12 +208,13 @@ nnoremap <C-p> gT
 " vimgrep
 nmap <Esc>f :vimgrep // *<left><left><left>
 " 検索時に画面中央に持ってくる
-nmap n nzz
-nmap N Nzz
-nmap * *zz
-nmap # #zz
-nmap g* g*zz
-nmap g# g#zz
+" 画面が動いて見づらいので無効化
+"nmap n nzz
+"nmap N Nzz
+"nmap * *zz
+"nmap # #zz
+"nmap g* g*zz
+"nmap g# g#zz
 " 置換系
 " <Leader>r で一括置換フォーマットを呼び出す。
 nnoremap <Leader>r :%s///g<left><left><left>
@@ -255,6 +256,7 @@ let g:ale_linters = {
 \}
 " Set this variable to 1 to fix files when you save them.
 let g:ale_fix_on_save = 1
+let g:ale_fix_on_save_ignore = {'markdown': ['trim_whitespace']}
 " LSP機能を無効化する場合は1をセット
 let g:ale_disable_lsp = 0
 " typescriptのオートインポート機能を有効化(デフォルトは無効)
