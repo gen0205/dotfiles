@@ -50,9 +50,6 @@ repo = 'ryanoasis/vim-devicons'
 repo = 'easymotion/vim-easymotion'
 
 [[plugins]]
-repo = 'haya14busa/incsearch.vim'
-
-[[plugins]]
 repo = 'vim-scripts/mru.vim'
 
 [[plugins]]
@@ -70,9 +67,6 @@ repo = 'unblevable/quick-scope'
 
 [[plugins]]
 repo = 'bronson/vim-visual-star-search'
-
-[[plugins]]
-repo = 'vim-scripts/IndexedSearch'
 
 [[plugins]]
 repo = 'Raimondi/delimitMate'

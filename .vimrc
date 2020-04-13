@@ -208,13 +208,12 @@ nnoremap <C-p> gT
 " vimgrep
 nmap <Esc>f :vimgrep // *<left><left><left>
 " 検索時に画面中央に持ってくる
-" 画面が動いて見づらいので無効化
-"nmap n nzz
-"nmap N Nzz
-"nmap * *zz
-"nmap # #zz
-"nmap g* g*zz
-"nmap g# g#zz
+nmap n nzz
+nmap N Nzz
+nmap * *zz
+nmap # #zz
+nmap g* g*zz
+nmap g# g#zz
 " 置換系
 " <Leader>r で一括置換フォーマットを呼び出す。
 nnoremap <Leader>r :%s///g<left><left><left>
@@ -304,12 +303,6 @@ map <Leader>j <Plug>(easymotion-j)
 map <Leader>k <Plug>(easymotion-k)
 map <Leader>h <Plug>(easymotion-linebackward)
 let g:EasyMotion_smartcase = 1
-" ------------------
-" haya14busa/incsearch.vim
-" ------------------
-map /  <Plug>(incsearch-forward)
-map ?  <Plug>(incsearch-backward)
-map g/ <Plug>(incsearch-stay)
 " ------------------
 " MRU TODO: FZFで代用できるので消すかも
 " ------------------
