@@ -202,8 +202,29 @@ if bufwinnr(1)
   map - <C-W>-
 endif
 " タブ間の移動
-nnoremap <C-n> gt
-nnoremap <C-p> gT
+" タブがなく、バッファのみの場合はバッファ間を移動する
+function! SwitchTabOrBuf(arg)
+  let hasManyTabPage = 1 < tabpagenr('$') ? 1 : 0
+  if a:arg == "n"
+    if hasManyTabPage
+      :tabn
+    else
+      :bn
+    endif
+  elseif a:arg == "p"
+    if hasManyTabPage
+      :tabp
+    else
+      :bp
+    endif
+  else
+    echo "error, arg must be 'n' or 'p'!"
+  endif
+endfunction
+"nnoremap <C-n> gt
+"nnoremap <C-p> gT
+nnoremap <silent> <C-n> :call SwitchTabOrBuf("n")<CR>
+nnoremap <silent> <C-p> :call SwitchTabOrBuf("p")<CR>
 " 検索
 " vimgrep
 nmap <Esc>f :vimgrep // *<left><left><left>
