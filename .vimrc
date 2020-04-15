@@ -365,9 +365,6 @@ endfunction
 let g:startify_change_to_vcs_root = 1
 " リモートファイル関連の読込が遅くなる問題対策
 let g:startify_skiplist = ['^/mnt/nfs']
-" Startify開いている間はシングルmapを無効化
-autocmd User Startified for key in ['b', 's', 't', 'v'] |
-      \ execute 'nunmap <buffer>' key | endfor
 " ------------------
 " nathanaelkane/vim-indent-guides
 " ------------------
