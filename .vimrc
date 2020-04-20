@@ -201,6 +201,8 @@ if bufwinnr(1)
   map + <C-W>+
   map - <C-W>-
 endif
+" 現在開いているバッファを削除して直前のバッファに切り替える
+nmap <leader>q :bprevious<CR>:bdelete #<CR>
 " タブ間の移動
 " タブがなく、バッファのみの場合はバッファ間を移動する
 function! SwitchTabOrBuf(arg)
