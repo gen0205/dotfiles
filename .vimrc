@@ -164,7 +164,7 @@ let g:mapleader = "\<Space>"
 autocmd QuickFixCmdPost *grep* cwindow
 
 " ==================
-" map settings
+" mapping settings
 " ==================
 " jjでESC
 inoremap jj <Esc>
@@ -182,6 +182,11 @@ nnoremap k gk
 " ^/$の簡易入力
 nnoremap H ^
 nnoremap L $
+" tabキーによるインデント変更
+nmap <Tab> >>
+nmap <S-Tab> <<
+imap <Tab> <c-t>
+imap <S-Tab> <c-d>
 " ノーマルモードでスペースを3回押すと、カーソル下の単語がハイライト
 nnoremap <silent> <Space><Space><Space> "zyiw:let @/ = '\<' . @z . '\>'<CR>:set hlsearch<CR>
 " ↑とセットで使用。<Leader><Leader>r でカーソル下の単語をハイライトしながら置換を行う。
