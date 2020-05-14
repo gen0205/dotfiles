@@ -142,6 +142,7 @@ set tabstop=2
 set shiftwidth=2
 " 改行した時に、同じレベルのインデントにする
 set autoindent
+" 個別indent設定
 au FileType php setlocal expandtab shiftwidth=4 softtabstop=4
 au FileType python setlocal expandtab shiftwidth=4 softtabstop=4
 
