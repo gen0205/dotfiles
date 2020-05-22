@@ -452,6 +452,13 @@ let g:comfortable_motion_interval = 3000.0 / 60
 " GitGutterのdiff取得感覚を100msecに変更(デフォルトは4000msec)
 set updatetime=100
 " ------------------
+" ryanoasis/vim-devicons
+" ------------------
+" vimrc再読み込み時の問題対策
+if exists("g:loaded_webdevicons")
+  call webdevicons#refresh()
+endif
+" ------------------
 " Clap
 " TODO:FZFで十分代用できるのでいらないかも。あとfloatingウィンドウが消えないバグがあって使いづらい
 " ------------------
