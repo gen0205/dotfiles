@@ -91,45 +91,6 @@ ggrks(){
   esac
 }
 
-# プロンプトの設定
-#PS1='\[\e[34m\]\w \[\e[37m\]\$\[\e[0m\] '
-# git現在のブランチをプロンプトに表示する
-function parse_git_branch {
-  git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ [\1]/'
-}
-function promps {
-  # 色は気分で変えたいかもしれないので変数宣言しておく
-  local  BLUE="\[\e[1;34m\]"
-  local  RED="\[\e[1;31m\]"
-  local  GREEN="\[\e[1;32m\]"
-  local  WHITE="\[\e[00m\]"
-  local  GRAY="\[\e[1;37m\]"
-  # 文字色+背景色
-  local  WHITE_ON_GREEN="\[\e[1;37;42m\]"
-
-  case $TERM in
-    xterm*) TITLEBAR='\[\e]0;\W\007\]';;
-         *) TITLEBAR="";;
-  esac
-  local BASE="\u@\h"
-  #PS1="${TITLEBAR}${GREEN}${BASE}${WHITE}:${GREEN}\w${GREEN}\$(parse_git_branch)${WHITE} \$ "
-
-  if [ $isMac -eq 1 ]; then
-    PS1="${BLUE}\w${BLUE}\$(parse_git_branch)${WHITE} \$ "
-  else
-    PS1="${GREEN}\w${WHITE_ON_GREEN}\$(parse_git_branch)${WHITE} \$ "
-  fi
-}
-
-# 出力の後に改行を入れる
-function add_line {
-  if [[ -z "${PS1_NEWLINE_LOGIN}" ]]; then
-    PS1_NEWLINE_LOGIN=true
-  else
-    printf '\n'
-  fi
-}
-
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
 HISTCONTROL=ignoreboth
@@ -267,9 +228,48 @@ if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
     tmux attach -t default || tmux new -s default
 fi
 
-# starship設定 bashrcの最後で実行する
+# プロンプトの設定
+#PS1='\[\e[34m\]\w \[\e[37m\]\$\[\e[0m\] '
+# git現在のブランチをプロンプトに表示する
+function parse_git_branch {
+  git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ [\1]/'
+}
+function promps {
+  # 色は気分で変えたいかもしれないので変数宣言しておく
+  local  BLUE="\[\e[1;34m\]"
+  local  RED="\[\e[1;31m\]"
+  local  GREEN="\[\e[1;32m\]"
+  local  WHITE="\[\e[00m\]"
+  local  GRAY="\[\e[1;37m\]"
+  # 文字色+背景色
+  local  WHITE_ON_GREEN="\[\e[1;37;42m\]"
+
+  case $TERM in
+    xterm*) TITLEBAR='\[\e]0;\W\007\]';;
+         *) TITLEBAR="";;
+  esac
+  local BASE="\u@\h"
+  #PS1="${TITLEBAR}${GREEN}${BASE}${WHITE}:${GREEN}\w${GREEN}\$(parse_git_branch)${WHITE} \$ "
+
+  if [ $isMac -eq 1 ]; then
+    PS1="${BLUE}\w${BLUE}\$(parse_git_branch)${WHITE} \$ "
+  else
+    PS1="${GREEN}\w${WHITE_ON_GREEN}\$(parse_git_branch)${WHITE} \$ "
+  fi
+}
+
+# 出力の後に改行を入れる
+function add_line {
+  if [[ -z "${PS1_NEWLINE_LOGIN}" ]]; then
+    PS1_NEWLINE_LOGIN=true
+  else
+    printf '\n'
+  fi
+}
+
+# プロンプト設定反映 bashrcの最後で実行する
 if type starship > /dev/null 2>&1; then
-  #starshipコマンドが使用可能な場合
+  #starshipコマンドが使用可能な場合はプロンプトにstarshipを使用する
   eval "$(starship init bash)"
 else
   promps
