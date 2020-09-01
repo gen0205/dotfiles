@@ -120,7 +120,6 @@ function promps {
     PS1="${GREEN}\w${WHITE_ON_GREEN}\$(parse_git_branch)${WHITE} \$ "
   fi
 }
-promps
 
 # 出力の後に改行を入れる
 function add_line {
@@ -130,7 +129,6 @@ function add_line {
     printf '\n'
   fi
 }
-PROMPT_COMMAND='add_line'
 
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
@@ -267,4 +265,13 @@ vmc() {
 # ターミナル起動時に自動でtmuxにアタッチする
 if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
     tmux attach -t default || tmux new -s default
+fi
+
+# starship設定 bashrcの最後で実行する
+if type starship > /dev/null 2>&1; then
+  #starshipコマンドが使用可能な場合
+  eval "$(starship init bash)"
+else
+  promps
+  PROMPT_COMMAND='add_line'
 fi
