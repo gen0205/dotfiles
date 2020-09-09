@@ -10,6 +10,7 @@ ln -sf ~/dotfiles/.bashrc ~/.bashrc
 ln -sf ~/dotfiles/.zshrc ~/.zshrc
 ln -sf ~/dotfiles/.vimrc ~/.vimrc
 ln -sf ~/dotfiles/.vimrc ~/.config/nvim/init.vim
+ln -sf ~/dotfiles/starship.toml ~/.config/starship.toml
 ln -sf ~/dotfiles/rc ~/.vim/
 ln -sf ~/dotfiles/colors ~/.vim/
 ln -sf ~/dotfiles/.vim/.cheatsheet.md ~/.vim/.cheatsheet.md
