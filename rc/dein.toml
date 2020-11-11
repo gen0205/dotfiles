@@ -113,6 +113,17 @@ repo = 'AndrewRadev/splitjoin.vim'
 #repo = 'liuchengxu/vim-clap'
 
 # ===============
+# highlight
+# ===============
+
+[[plugins]]
+repo = 'RRethy/vim-illuminate'
+hook_add = '''
+let g:Illuminate_highlightUnderCursor = 0
+let g:Illuminate_ftblacklist = ['nerdtree', 'markdown']
+'''
+
+# ===============
 # syntax highlight
 # ===============
 
