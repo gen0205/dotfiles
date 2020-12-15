@@ -267,6 +267,10 @@ function add_line {
   fi
 }
 
+# thefuck settings
+
+eval $(thefuck --alias)
+
 # プロンプト設定反映 bashrcの最後で実行する
 if type starship > /dev/null 2>&1; then
   #starshipコマンドが使用可能な場合はプロンプトにstarshipを使用する
