@@ -54,9 +54,6 @@ repo = 'ryanoasis/vim-devicons'
 repo = 'easymotion/vim-easymotion'
 
 [[plugins]]
-repo = 'vim-scripts/mru.vim'
-
-[[plugins]]
 repo = 'preservim/nerdcommenter'
 
 [[plugins]]

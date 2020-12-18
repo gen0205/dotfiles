@@ -335,11 +335,6 @@ map <Leader>k <Plug>(easymotion-k)
 map <Leader>h <Plug>(easymotion-linebackward)
 let g:EasyMotion_smartcase = 1
 " ------------------
-" MRU TODO: FZFで代用できるので消すかも
-" ------------------
-" <leader> + f でMRU(最近開いたファイルリスト)を開く
-" map <Leader>f :MRU<CR>
-" ------------------
 " posva/vim-vue
 " ------------------
 " ファイルの途中からsyntaxが効かなくなることがあるらしいので以下を追加
