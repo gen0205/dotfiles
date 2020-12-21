@@ -117,6 +117,12 @@ else
 fi
 #fzfコマンド実行時のデフォルトオプション
 export FZF_DEFAULT_OPTS="--height 40% --reverse --border --cycle"
+# FZF-cd
+fcd() {
+  local dir
+  dir=$(fd -t d | fzf +m) &&
+  cd "$dir"
+}
 # FZF-vim
 alias fv='vim $(fzf-tmux -m --preview "$FZF_PREVIEW")'
 alias fvi='vim $(fzf-tmux -m --preview "$FZF_PREVIEW")'
