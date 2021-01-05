@@ -6,6 +6,9 @@ if [ "$(uname)" = 'Darwin' ]; then
 fi
 
 echo "deploying dotfiles..."
+mkdir -p ~/.config
+mkdir -p ~/.config/nvim
+mkdir -p ~/.vim
 ln -sf ~/dotfiles/.bashrc ~/.bashrc
 ln -sf ~/dotfiles/.zshrc ~/.zshrc
 ln -sf ~/dotfiles/.vimrc ~/.vimrc
