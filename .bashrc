@@ -100,6 +100,9 @@ case "$TERM" in
   xterm-color|*-256color) color_prompt=yes;;
 esac
 
+# Bat
+export BAT_THEME="Dracula"
+
 # FZF
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 if type rg > /dev/null 2>&1; then
