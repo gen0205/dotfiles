@@ -123,7 +123,7 @@ export FZF_DEFAULT_OPTS="--height 40% --reverse --border --cycle"
 # FZF-cd
 fcd() {
   local dir
-  dir=$(fd -t d | fzf +m) &&
+  dir=$(fd -t d | fzf +m --preview 'ls -la {}') &&
   cd "$dir"
 }
 # FZF-vim
