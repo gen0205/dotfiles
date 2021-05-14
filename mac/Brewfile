@@ -10,7 +10,7 @@ brew "exa"
 brew "fd"
 brew "lazygit"
 brew "lazydocker"
-brew "neovim"
+brew "neovim", args: ["HEAD"]
 brew "ripgrep"
 brew "tmux"
 brew "reattach-to-user-namespace"

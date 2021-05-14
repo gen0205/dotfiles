@@ -124,6 +124,10 @@ let g:Illuminate_ftblacklist = ['nerdtree', 'markdown']
 # syntax highlight
 # ===============
 
+# nvim-treesitter
+[[plugins]]
+repo = 'nvim-treesitter/nvim-treesitter'
+
 # scss
 [[plugins]]
 repo = 'cakebaker/scss-syntax.vim'
