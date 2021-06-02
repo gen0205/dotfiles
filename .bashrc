@@ -103,6 +103,12 @@ esac
 # Bat
 export BAT_THEME="Dracula"
 
+# MANPAGER
+if type bat > /dev/null 2>&1; then
+  # batがある場合はmanコマンドにbatを適応する
+  export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+fi
+
 # FZF
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 if type rg > /dev/null 2>&1; then
