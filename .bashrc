@@ -132,6 +132,12 @@ fcd() {
   dir=$(fd -t d | fzf +m --preview 'ls -la {}') &&
   cd "$dir"
 }
+# FZF-open
+fo() {
+  local target
+  target=$(fd| fzf +m) &&
+  open "$target"
+}
 # FZF-vim
 alias fv='vim $(fzf-tmux -m --preview "$FZF_PREVIEW")'
 alias fvi='vim $(fzf-tmux -m --preview "$FZF_PREVIEW")'
