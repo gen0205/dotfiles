@@ -20,6 +20,7 @@ ln -sf ~/dotfiles/rc ~/.vim/
 ln -sf ~/dotfiles/colors ~/.vim/
 ln -sf ~/dotfiles/.vim/.cheatsheet.md ~/.vim/.cheatsheet.md
 ln -sf ~/dotfiles/.tmux.conf ~/.tmux.conf
+ln -sf ~/dotfiles/.p10k.zsh ~/.p10k.zsh
 
 if [ $isMac -eq 1 ]; then
   # mac環境の場合
