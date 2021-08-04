@@ -87,6 +87,8 @@ set showcmd
 set scrolloff=5
 " <C-a> や <C-x> で数値を増減させるときに8進数を無効にする
 set nrformats-=octal
+" マウス操作を有効化する
+set mouse=a
 
 if has('nvim')
   " yankした内容をクリップボードと共有する
