@@ -67,6 +67,8 @@ let g:dracula_colorterm = 0
 "イタリック(斜め字体)非対応ターミナルの場合にカラーがおかしくなるので無効化
 let g:dracula_italic = 0
 colorscheme dracula
+" draculaテーマのカレントライン時にコメントが非常に見づらいのでカレントラインの背景色を変更する
+highlight CursorLine cterm=NONE ctermbg=234 guibg=#1a1b23
 
 " ==================
 " setting
