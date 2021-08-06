@@ -81,6 +81,12 @@ set nobackup
 set noswapfile
 " 編集中のファイルが変更されたら自動で読み直す
 set autoread
+" autoreadの頻度を上げる(ウィンドウを移動するたびにチェックするようにする)
+augroup vimrc-checktime
+  autocmd!
+  autocmd WinEnter * checktime
+  autocmd CursorHold * checktime
+augroup END
 " バッファが編集中でもその他のファイルを開けるように
 set hidden
 " 入力中のコマンドをステータスに表示する
