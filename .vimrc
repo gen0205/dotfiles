@@ -293,6 +293,7 @@ let g:ale_linter_aliases = {
 let g:ale_linters = {
 \   'jsx': ['stylelint', 'eslint'],
 \   'vue': ['eslint', 'vls'],
+\   'python': ['flake8'],
 \}
 " Set this variable to 1 to fix files when you save them.
 let g:ale_fix_on_save = 1
