@@ -102,6 +102,8 @@ if has('nvim')
   " yankした内容をクリップボードと共有する
   set clipboard=unnamed
 endif
+" バッファ外に表示されてる ~ の部分を無効にする
+highlight link EndOfBuffer Ignore
 
 " ==================
 " 見た目系
