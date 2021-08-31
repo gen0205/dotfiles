@@ -39,6 +39,9 @@ setopt no_beep
 setopt auto_cd
 setopt auto_list  # 補完候補が複数ある時に、一覧表示
 setopt auto_menu  # 補完候補が複数あるときに自動的に一覧表示する
+# CTRL + N or CTRL + P で前方または後方に移動する
+bindkey '^n' expand-or-complete
+bindkey '^p' reverse-menu-complete
 #############################
 
 alias fzf='fzf-tmux'
