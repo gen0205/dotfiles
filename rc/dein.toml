@@ -11,6 +11,12 @@ endif
 '''
 
 #[[plugins]]
+#repo = 'Shougo/ddc.nvim'
+
+#[[plugins]]
+#repo = 'vim-denops/denops.vim'
+
+#[[plugins]]
 #repo = 'neoclide/coc.nvim'
 #rev = 'release'
 #on_i = 1

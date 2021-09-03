@@ -82,7 +82,6 @@ simple terminal UI for git commands
   - COCが有力？
   - LSP Settings plugin
     - https://github.com/mattn/vim-lsp-settings
-- zsh settings
-  - https://github.com/junegunn/fzf/wiki/examples
+- deopleteから[ddc](https://github.com/Shougo/ddc.vim)に移行する
 - asdf-vm dotfiles
   - https://github.com/asdf-vm/asdf
