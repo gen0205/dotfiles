@@ -470,6 +470,11 @@ if exists("g:loaded_webdevicons")
   call webdevicons#refresh()
 endif
 " ------------------
+" RRethy/vim-illuminate
+" ------------------
+hi illuminatedWord cterm=underline ctermbg=LightYellow gui=underline guibg=LightYellow
+hi link illuminatedWord Visual
+" ------------------
 " Clap
 " TODO:FZFで十分代用できるのでいらないかも。あとfloatingウィンドウが消えないバグがあって使いづらい
 " ------------------
