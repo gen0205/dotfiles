@@ -102,6 +102,8 @@ if !type fd > /dev/null 2>&1; then
 fi
 
 alias d='docker'
+# Docker起動時に Fatal Error Failed to ping backend API という警告が出た場合の対処法
+alias rdocker="killall Docker && cd /Applications;open -a Docker;cd ~"
 # show in Finder
 alias f='open -a Finder ./'
 alias o='open'
