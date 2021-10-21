@@ -454,6 +454,12 @@ command! -bang -nargs=? -complete=dir Files
 " :Buffers コマンドで該当バッファを開く際、既にウィンドウを開いていたらそのウィンドウに移動する
 let g:fzf_buffers_jump = 1
 
+
+" ------------------
+" iamcco/markdown-preview.nvim
+" ------------------
+nmap <leader>md <Plug>MarkdownPreviewToggle
+
 " ------------------
 " yuttie/comfortable-motion.vim
 " ------------------
