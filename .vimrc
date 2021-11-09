@@ -206,6 +206,8 @@ cnoremap <C-p> <Up>
 nnoremap <silent> <Space><Space><Space> "zyiw:let @/ = '\<' . @z . '\>'<CR>:set hlsearch<CR>
 " ↑とセットで使用。<Leader><Leader>r でカーソル下の単語をハイライトしながら置換を行う。
 nmap <Leader><Leader>r <Space><Space><Space>:%s/<C-r>///g<Left><Left>
+" visualモードで選択した範囲を対象にして置換を行う
+vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
 " Ctrl + hjkl でウィンドウ間を移動
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
