@@ -85,3 +85,7 @@ simple terminal UI for git commands
 - deopleteから[ddc](https://github.com/Shougo/ddc.vim)に移行する
 - asdf-vm dotfiles
   - https://github.com/asdf-vm/asdf
+
+### vim
+
+- gitgutterを廃止して[vim-signify](https://github.com/mhinz/vim-signify)に移行する
