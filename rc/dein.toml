@@ -135,6 +135,18 @@ let g:Illuminate_highlightUnderCursor = 0
 let g:Illuminate_ftblacklist = ['nerdtree', 'markdown']
 '''
 
+# help you read complex code by showing diff level of parentheses in diff color !!
+[[plugins]]
+repo = 'luochen1990/rainbow'
+hook_add = '''
+let g:rainbow_active = 1
+let g:rainbow_conf = {
+  \ 'separately': {
+    \'nerdtree': 0,
+  \ }
+\}
+'''
+
 # ===============
 # syntax highlight
 # ===============
