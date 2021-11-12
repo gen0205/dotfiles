@@ -179,6 +179,8 @@ autocmd QuickFixCmdPost *grep* cwindow
 " ==================
 " mapping settings
 " ==================
+" マクロ記録機能を無効化
+nnoremap q <Nop>
 " jjでESC
 inoremap jj <Esc>
 " <C-L>でdeleteキー
@@ -200,6 +202,9 @@ nmap <Tab> >>
 nmap <S-Tab> <<
 imap <Tab> <c-t>
 imap <S-Tab> <c-d>
+" visualモード中にインデント変更してもvisualモードを解除させない
+vnoremap < <gv
+vnoremap > >gv
 " コマンドモードで<C-p>を押したら入力中の文字で前方一致検索のコマンド履歴を辿る
 cnoremap <C-p> <Up>
 " ノーマルモードでスペースを3回押すと、カーソル下の単語がハイライト
