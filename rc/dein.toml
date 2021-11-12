@@ -147,6 +147,16 @@ let g:rainbow_conf = {
 \}
 '''
 
+# 全角スペースを可視化する
+[[plugins]]
+repo = 'thinca/vim-zenspace'
+hook_add = '''
+augroup vimrc-highlight
+  autocmd!
+  autocmd ColorScheme * highlight ZenSpace ctermbg=Red guibg=Red
+augroup END
+'''
+
 # ===============
 # syntax highlight
 # ===============
