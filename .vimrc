@@ -187,6 +187,8 @@ inoremap jj <Esc>
 inoremap <C-L> <DEL>
 " ESC連打でハイライト解除
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
+" xで一文字だけ消した場合はyankしない
+noremap x "_x
 " 行末までをヤンク
 nnoremap Y y$
 " カーソル行を空行化
