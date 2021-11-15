@@ -110,6 +110,8 @@ highlight link EndOfBuffer Ignore
 " ==================
 " 行番号を表示
 set number
+" 行番号を相対表示
+set rnu
 " 現在の行を強調表示
 set cursorline
 " 現在の行を強調表示（縦）
