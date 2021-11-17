@@ -185,6 +185,8 @@ autocmd QuickFixCmdPost *grep* cwindow
 nnoremap q <Nop>
 " jjでESC
 inoremap jj <Esc>
+cnoremap <expr> j
+       \ getcmdline()[getcmdpos()-2] ==# 'j' ? '<BS><C-c>' : 'j'
 " <C-L>でdeleteキー
 inoremap <C-L> <DEL>
 " ESC連打でハイライト解除
