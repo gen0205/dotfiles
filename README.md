@@ -9,12 +9,62 @@ $ git clone https://github.com/gen0205/dotfiles.git
 $ sh ~/dotfiles/install.sh
 ```
 
-## ~/.bash_profile
+## manual install
+
+### ~/.bash_profile
 
 - bash-completion
 
-add follows
+add follows  
 `[[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"`
+
+### delta
+
+- for git
+
+config to `~/.gitconfig`  
+see [dandavison/delta](https://github.com/dandavison/delta)  
+
+sample:  
+```
+[pager]
+  diff = delta
+  log = delta
+  reflog = delta
+  show = delta
+
+[interactive]
+  diffFilter = delta --color-only --features=interactive
+
+[delta]
+  features = decorations line-numbers
+  plus-style = syntax "#008700"
+  minus-style = syntax "#3f0001"
+
+[delta "line-numbers"]
+  line-numbers-left-style = cyan
+  line-numbers-right-style = cyan
+  line-numbers-minus-style = 124
+  line-numbers-plus-style = 28
+
+[delta "interactive"]
+  keep-plus-minus-markers = false
+
+[delta "decorations"]
+  commit-decoration-style = bold yellow box ul
+  commit-style = raw
+  file-style = bold yellow ul
+  file-decoration-style = none
+  hunk-header-decoration-style = cyan box ul
+  hunk-header-file-style = red
+  hunk-header-line-number-style = "#067a00"
+  hunk-header-style = file line-number syntax
+```
+
+- for lazygit
+
+To use delta. need to config lazygit  
+see [here](https://github.com/jesseduffield/lazygit/blob/master/docs/Custom_Pagers.md#delta)
 
 ## requirements
 
