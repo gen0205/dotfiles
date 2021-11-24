@@ -290,7 +290,14 @@ if has('nvim')
   command! -nargs=* Term split | terminal <args>
   command! -nargs=* Termv vsplit | terminal <args>
 endif
-
+" echo message vim start up time
+if has('vim_starting') && has('reltime')
+  augroup VimStart
+    autocmd!
+    let g:startuptime = reltime()
+    autocmd VimEnter * let g:startuptime = reltime(g:startuptime) | redraw | echomsg 'startuptime: ' . reltimestr(g:startuptime)
+  augroup END
+endif
 " ==================
 " vim plugin設定
 " ==================
