@@ -185,6 +185,8 @@ autocmd QuickFixCmdPost *grep* cwindow
 nnoremap q <Nop>
 " jjでESC
 inoremap jj <Esc>
+" 日本語入力時にもjjキーでエスケープさせる
+inoremap っj <Esc>
 cnoremap <expr> j
        \ getcmdline()[getcmdpos()-2] ==# 'j' ? '<BS><C-c>' : 'j'
 " <C-L>でdeleteキー
