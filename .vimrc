@@ -275,6 +275,10 @@ nmap g# g#zz
 " 置換系
 " <Leader>r で一括置換フォーマットを呼び出す。
 nnoremap <Leader>r :%s///g<left><left><left>
+" 削除系
+" 一文字削除はyankしない
+nnoremap x "_x
+xnoremap x "_x
 " redo
 nnoremap U <C-R>
 " for nvim
