@@ -279,6 +279,8 @@ nnoremap <Leader>r :%s///g<left><left><left>
 " 一文字削除はyankしない
 nnoremap x "_x
 xnoremap x "_x
+" visualモード中にvを押したら行末へジャンプ
+xnoremap v $
 " redo
 nnoremap U <C-R>
 " for nvim
@@ -394,6 +396,7 @@ map <Leader>n <plug>NERDTreeTabsToggle<CR>
 let g:EasyMotion_keys='asdfjkoweriop'
 " s{char}{char} to move to {char}{char}
 nmap s <Plug>(easymotion-overwin-f2)
+xmap s <Plug>(easymotion-s2)
 map <Leader>l <Plug>(easymotion-lineforward)
 map <Leader>j <Plug>(easymotion-j)
 map <Leader>k <Plug>(easymotion-k)
