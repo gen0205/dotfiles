@@ -23,6 +23,7 @@ esac
 # コマンド補完
 autoload -U compinit
 compinit
+_comp_options+=(globdots)
 # 大文字小文字に関わらず, 候補が見つからない時のみ文字種を無視した補完をする.
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 # 矢印キーのインターフェイスを使って自動補完する
