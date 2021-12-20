@@ -205,8 +205,11 @@ nnoremap k gk
 " ^/$の簡易入力
 nnoremap H ^
 nnoremap L $
-" tabキーによるインデント変更
-nmap <Tab> >>
+" インデント変更
+" <Tab>をマップしてしまうと<C-o>も潰してしまう為、仕方ないので無効化
+"nmap <Tab> >>
+nnoremap > >>
+nnoremap < <<
 nmap <S-Tab> <<
 imap <Tab> <c-t>
 imap <S-Tab> <c-d>
