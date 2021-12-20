@@ -11,6 +11,14 @@ $ sh ~/dotfiles/install.sh
 
 ## manual install
 
+### for Mac
+
+- Ctrl + Space のショートカットを削除する
+
+tmuxのprefixキーとして使っているため  
+設定 -> キーボード -> ショートカット -> 入力ソース  
+「前の入力ソースを選択」のチェックを解除する
+
 ### ~/.bash_profile
 
 - bash-completion
