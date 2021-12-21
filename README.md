@@ -84,8 +84,6 @@ for `liuchengxu/vim-clap` plugin
 
 ### python3
 
-- pyenv recommended
-  - TODO: replace to asdf.vm
 - after install python3.x
 
 `pip3 install --user pynvim`
@@ -96,9 +94,12 @@ after. launch nvim and execute follow command.
 
 ### nodejs
 
-- nodenv recommended
-  - TODO: replace to asdf.vm
 - require v8.10.0 <
+
+### deno
+
+- for vim plugin 'vim-denops/denops.vim'
+  - see also https://github.com/vim-denops/denops.vim
 
 ### tmux
 
@@ -140,10 +141,12 @@ simple terminal UI for git commands
   - COCが有力？
   - LSP Settings plugin
     - https://github.com/mattn/vim-lsp-settings
-- deopleteから[ddc](https://github.com/Shougo/ddc.vim)に移行する
 - asdf-vm dotfiles
   - https://github.com/asdf-vm/asdf
 
 ### vim
 
 - gitgutterを廃止して[vim-signify](https://github.com/mhinz/vim-signify)に移行する
+- deopleteから[ddc](https://github.com/Shougo/ddc.vim)に移行する
+- NERDTreeを廃止したい
+  - 参考：[2020秋 Vim のファイラー系プラグイン比較](https://zenn.dev/lambdalisue/articles/3deb92360546d526381f)
