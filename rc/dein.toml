@@ -13,8 +13,8 @@ endif
 #[[plugins]]
 #repo = 'Shougo/ddc.nvim'
 
-#[[plugins]]
-#repo = 'vim-denops/denops.vim'
+[[plugins]]
+repo = 'vim-denops/denops.vim'
 
 #[[plugins]]
 #repo = 'neoclide/coc.nvim'
@@ -119,6 +119,18 @@ repo = 'yuttie/comfortable-motion.vim'
 
 [[plugins]] # Switch between single-line and multiline forms of code
 repo = 'AndrewRadev/splitjoin.vim'
+
+# <C-a>や<C-x>のインクリメント・デクリメントを賢くする
+[[plugins]]
+repo = 'monaqa/dps-dial.vim'
+hook_add = '''
+nmap  <C-a>  <Plug>(dps-dial-increment)
+nmap  <C-x>  <Plug>(dps-dial-decrement)
+xmap  <C-a>  <Plug>(dps-dial-increment)
+xmap  <C-x>  <Plug>(dps-dial-decrement)
+xmap g<C-a> g<Plug>(dps-dial-increment)
+xmap g<C-x> g<Plug>(dps-dial-decrement)
+'''
 
 # Vim-clap is a modern generic interactive finder and dispatcher, based on the newly feature: floating_win of neovim or popup of vim. The goal of vim-clap is to work everywhere out of the box, with fast response.
 #[[plugins]]
