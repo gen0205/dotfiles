@@ -335,6 +335,18 @@ augroup markdown-insert-link
   au!
   au FileType markdown xnoremap <buffer> <silent> p :call InsertMarkdownLink()<CR>
 augroup END
+" ファイルを開いたときに自動的に前回の位置へジャンプする
+augroup restore-cursor
+  autocmd!
+  autocmd BufReadPost *
+        \ : if line("'\"") >= 1 && line("'\"") <= line("$")
+        \ |   exe "normal! g`\""
+        \ | endif
+  autocmd BufWinEnter *
+        \ : if empty(&buftype) && line('.') > winheight(0) / 2
+        \ |   execute 'normal! zz'
+        \ | endif
+augroup END
 " ==================
 " vim plugin設定
 " ==================
