@@ -389,17 +389,6 @@ let g:airline#extensions#tabline#left_alt_sep = '|'
 " タブに表示するファイル名フォーマット
 let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
 " ------------------
-" NERDTree
-" ------------------
-" Make nerdtree look nice
-let g:NERDTreeMinimalUI = 1
-let g:NERDTreeDirArrows = 1
-let g:NERDTreeWinSize = 30
-" 隠しファイルをデフォルトで表示させる
-let g:NERDTreeShowHidden=1
-" ディレクトリをvimで開いた時、netrwで開く
-let g:NERDTreeHijackNetrw = 0
-" ------------------
 " NERDTreeTabs
 " ------------------
 " <Leader> + n でNERDTreeTabsを開く
