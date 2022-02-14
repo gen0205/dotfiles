@@ -207,6 +207,8 @@ nnoremap k gk
 " ^/$の簡易入力
 nnoremap H ^
 nnoremap L $
+" gFをgfにマッピング(gFは数字指定がなければgfと同じ挙動であるのでこうした方が便利)
+nnoremap gf gF
 " インデント変更
 " <Tab>をマップしてしまうと<C-o>も潰してしまう為、仕方ないので無効化
 "nmap <Tab> >>
