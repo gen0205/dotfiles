@@ -75,6 +75,8 @@ highlight CursorLine cterm=NONE ctermbg=234 guibg=#1a1b23
 " ==================
 " 既存のファイルを開くときはとりあえず utf-8
 set fileencodings=utf-8,cp932
+" helpの言語設定
+set helplang=ja,en
 " バックアップファイルを作らない
 set nobackup
 " スワップファイルを作らない

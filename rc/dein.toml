@@ -24,6 +24,9 @@ repo = 'vim-denops/denops.vim'
 #hook_source = 'call coil398#init#coc#hook_source()'
 
 [[plugins]]
+repo = 'vim-jp/vimdoc-ja'
+
+[[plugins]]
 repo = 'christoomey/vim-tmux-navigator'
 
 [[plugins]]
