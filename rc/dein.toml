@@ -167,6 +167,8 @@ nmap <Leader>- <Plug>(choosewin)
 let g:choosewin_overlay_enable          = 1
 " オーバーレイ・フォントをマルチバイト文字を含むバッファでも綺麗に表示する。
 let g:choosewin_overlay_clear_multibyte = 1
+" ラベルを書き換える(デフォルトはabcd..で使いづらい)
+let g:choosewin_label = 'hjklqwertyuiopadfgzcvbnm'
 '''
 # for NERDTree
 [[plugins]]
