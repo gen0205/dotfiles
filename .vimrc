@@ -4,6 +4,8 @@ scriptencoding utf-8
 augroup vimrc
   autocmd!
 augroup END
+" <Leader>を<Space>(半角スペース)に置き換え
+let g:mapleader = "\<Space>"
 " ==================
 " dein settings
 " ==================
@@ -175,8 +177,6 @@ set incsearch
 set wrapscan
 " 検索語をハイライト表示
 set hlsearch
-" <Leader>を<Space>(半角スペース)に置き換え
-let g:mapleader = "\<Space>"
 " :vimgrepや:grepや:Ggrepでも自動的にquickfix-windowを開くようにする
 autocmd QuickFixCmdPost *grep* cwindow
 
@@ -240,8 +240,8 @@ nnoremap <S-Up>    <C-w>-<CR>
 nnoremap <S-Down>  <C-w>+<CR>
 " +,-でも上下のウィンドウサイズ調整
 if bufwinnr(1)
-  map + <C-W>+
-  map - <C-W>-
+  nnoremap + <C-W>+
+  nnoremap - <C-W>-
 endif
 " 現在開いているバッファを削除して直前のバッファに切り替える
 nmap <leader>q :bprevious<CR>:bdelete #<CR>

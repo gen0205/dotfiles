@@ -158,6 +158,20 @@ xmap g<C-a> g<Plug>(dps-dial-increment)
 xmap g<C-x> g<Plug>(dps-dial-decrement)
 '''
 
+# Land on window you chose like tmux's 'display-pane'
+[[plugins]]
+repo = 't9md/vim-choosewin'
+hook_add = '''
+nmap <Leader>- <Plug>(choosewin)
+" オーバーレイ機能を有効にしたい場合
+let g:choosewin_overlay_enable          = 1
+" オーバーレイ・フォントをマルチバイト文字を含むバッファでも綺麗に表示する。
+let g:choosewin_overlay_clear_multibyte = 1
+'''
+# for NERDTree
+[[plugins]]
+repo = 'weilbith/nerdtree_choosewin-plugin'
+
 # Vim-clap is a modern generic interactive finder and dispatcher, based on the newly feature: floating_win of neovim or popup of vim. The goal of vim-clap is to work everywhere out of the box, with fast response.
 #[[plugins]]
 #repo = 'liuchengxu/vim-clap'
