@@ -76,10 +76,11 @@ let g:airline#extensions#whitespace#skip_indent_check_ft =
 # tabline plugin
 [[plugins]]
 repo = 'romgrk/barbar.nvim'
-hook_add = '''
-let bufferline = get(g:, 'bufferline', {})
-let bufferline.icon_close_tab_modified = '●'
-let bufferline.insert_at_end = v:true
+lua_add = '''
+  vim.g.barbar_auto_setup = false
+  require'barbar'.setup {
+    insert_at_end = true,
+  }
 '''
 
 # Adds file type icons to Vim plugins such as: NERDTree, vim-airline, CtrlP, unite, Denite, lightline, vim-startify and many more
