@@ -143,6 +143,8 @@ simple terminal UI for git commands
     - https://github.com/mattn/vim-lsp-settings
 - asdf-vm dotfiles
   - https://github.com/asdf-vm/asdf
+- nvim-telescope/telescope.nvim
+    - UIがいい。fzfの代わりに使っても良さそう。
 
 ### vim
 
