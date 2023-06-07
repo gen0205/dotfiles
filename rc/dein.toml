@@ -139,6 +139,13 @@ repo = 'junegunn/fzf.vim'
 depends = 'fzf'
 
 [[plugins]]
+repo = 'nvim-lua/plenary.nvim'
+
+# nvim-lua/plenary.nvim is required
+[[plugins]]
+repo = 'nvim-telescope/telescope.nvim'
+
+[[plugins]]
 repo = 'mhinz/vim-startify'
 
 [[plugins]]

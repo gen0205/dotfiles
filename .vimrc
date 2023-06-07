@@ -526,6 +526,30 @@ command! -bang -nargs=? -complete=dir Files
 " :Buffers コマンドで該当バッファを開く際、既にウィンドウを開いていたらそのウィンドウに移動する
 let g:fzf_buffers_jump = 1
 
+" ------------------
+" nvim-telescope/telescope.nvim
+" ------------------
+
+autocmd FileType TelescopePrompt call deoplete#custom#buffer_option('auto_complete', v:false)
+
+" Find files using Telescope command-line sugar.
+nnoremap ;f <cmd>Telescope find_files<cr>
+nnoremap ;g <cmd>Telescope live_grep<cr>
+nnoremap ;b <cmd>Telescope buffers<cr>
+nnoremap ;h <cmd>Telescope help_tags<cr>
+
+" Using Lua functions
+nnoremap ;lf <cmd>lua require('telescope.builtin').find_files()<cr>
+nnoremap ;lg <cmd>lua require('telescope.builtin').live_grep()<cr>
+nnoremap ;lb <cmd>lua require('telescope.builtin').buffers()<cr>
+nnoremap ;lh <cmd>lua require('telescope.builtin').help_tags()<cr>
+
+"lua << EOF
+"require('telescope').setup{
+  "defaults = {
+  "}
+"}
+"EOF
 
 " ------------------
 " iamcco/markdown-preview.nvim
