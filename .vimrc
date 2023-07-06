@@ -146,6 +146,7 @@ filetype indent on
 
 au BufNewFile,BufRead *.jsx set filetype=javascript.jsx
 au BufRead,BufNewFile *.tsx set filetype=typescript.tsx
+au BufRead,BufNewFile *.SQL set filetype=sql
 
 " ==================
 " Tab系
