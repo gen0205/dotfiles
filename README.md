@@ -103,11 +103,11 @@ after. launch nvim and execute follow command.
 
 ### tmux
 
-### exa
+### eza
 
 A modern version of ‘ls’.
 
-> https://the.exa.website/
+> https://github.com/eza-community/eza
 
 ### ripgrep
 

@@ -50,9 +50,9 @@ alias fzf='fzf-tmux'
 # エイリアスの設定
 # ls（カラー表示）
 # mac環境とlinux環境でカラーオプションを切り替える
-# exaコマンドが使える場合はそちらを使う
-if type exa > /dev/null 2>&1; then
-  alias ls='exa -g --time-style=long-iso'
+# ezaコマンドが使える場合はそちらを使う
+if type eza > /dev/null 2>&1; then
+  alias ls='eza -g --time-style=long-iso'
   alias ll='ls -l --header --git'
   alias la='ls -la --header --git'
   alias l='clear && ll'
@@ -359,7 +359,7 @@ source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 # 色を変更する。デフォルトは8
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=5'
 # powerlevel10k プロンプトのテーマ
-source /usr/local/opt/powerlevel10k/powerlevel10k.zsh-theme
+source /usr/local/share/powerlevel10k/powerlevel10k.zsh-theme
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
